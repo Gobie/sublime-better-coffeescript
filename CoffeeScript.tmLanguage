@@ -567,6 +567,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#instance_method</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#single_quoted_string</string>
 		</dict>
 		<dict>
@@ -652,6 +656,18 @@
 					<string>(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[,.)\n]|(\s+(then|instanceof|and|or|not|is|isnt)\b|\s*(==|=(?!>)|\?))))</string>
 					<key>name</key>
 					<string>variable.other.readwrite.instance.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>instance_method</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(@|this\.)([a-zA-Z_\$]\w*)?(?=\s+|\?|\()</string>
+					<key>name</key>
+					<string>variable.other.method.instance.coffee</string>
 				</dict>
 			</array>
 		</dict>

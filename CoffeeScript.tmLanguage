@@ -453,7 +453,7 @@
 		<dict>
 			<key>match</key>
 			<string>(?x)\b(
-				decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|require
+				decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)
 			)\b</string>
 			<key>name</key>
 			<string>support.function.coffee</string>

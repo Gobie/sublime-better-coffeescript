@@ -571,6 +571,14 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#google_closure_library</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#an_library</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#single_quoted_string</string>
 		</dict>
 		<dict>
@@ -671,9 +679,33 @@
 				</dict>
 			</array>
 		</dict>
+		<key>google_closure_library</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>goog(\.\w+)+</string>
+					<key>name</key>
+					<string>variable.other.goog</string>
+				</dict>
+			</array>
+		</dict>
+		<key>an_library</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>an(\.\w+)+</string>
+					<key>name</key>
+					<string>variable.other.an</string>
+				</dict>
+			</array>
+		</dict>
 
 
- 		<key>interpolated_coffee</key>
+		<key>interpolated_coffee</key>
 		<dict>
 			<key>patterns</key>
 			<array>

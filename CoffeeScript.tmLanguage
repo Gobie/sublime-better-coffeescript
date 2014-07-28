@@ -452,6 +452,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>((?&lt;=JSON\.)(parse|stringify))\b</string>
+			<key>name</key>
+			<string>support.function.JSON.coffee</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>(?x)\b(
 				decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)
 			)\b</string>

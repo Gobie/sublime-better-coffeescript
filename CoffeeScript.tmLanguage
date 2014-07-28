@@ -467,6 +467,14 @@
 		<dict>
 			<key>match</key>
 			<string>(?x)((?&lt;=\.)(
+				preventDefault|stopPropagation|stopImmediatePropagation
+			))\b</string>
+			<key>name</key>
+			<string>support.function.method.event.coffee</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?x)((?&lt;=\.)(
 				apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|
 				isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|
 				reduce(Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|

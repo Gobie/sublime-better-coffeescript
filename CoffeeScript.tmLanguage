@@ -555,6 +555,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#este_library</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#single_quoted_string</string>
 		</dict>
 		<dict>
@@ -688,6 +692,18 @@
 					<string>an(\.\w+)+</string>
 					<key>name</key>
 					<string>variable.other.an</string>
+				</dict>
+			</array>
+		</dict>
+		<key>este_library</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>este(\.\w+)+</string>
+					<key>name</key>
+					<string>variable.other.este</string>
 				</dict>
 			</array>
 		</dict>

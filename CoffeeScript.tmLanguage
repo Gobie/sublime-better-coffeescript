@@ -637,7 +637,17 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[,.)\n]|(\s+(then|instanceof|and|or|not|is|isnt)\b|\s*(==|=(?!&gt;)|\?))))</string>
+					<string>(?x)(@|this\.)
+						([a-zA-Z_\$]\w*)?
+						(?=
+							\??(
+								[\]\[,.)\n]|
+								(
+									\s+(and|if|instanceof|is|isnt|not|or|then|unless)\b|
+									\s*(==|=(?!&gt;)|\?)
+								)
+							)
+						)</string>
 					<key>name</key>
 					<string>variable.other.readwrite.instance.coffee</string>
 				</dict>
@@ -649,7 +659,9 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(@|this\.)([a-zA-Z_\$]\w*)?(?=\s+|\?|\()</string>
+					<string>(?x)(@|this\.)
+						([a-zA-Z_\$]\w*)?
+						(?=\s+|\?|\()</string>
 					<key>name</key>
 					<string>variable.other.method.instance.coffee</string>
 				</dict>

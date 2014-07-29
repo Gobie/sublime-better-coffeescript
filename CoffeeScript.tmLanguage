@@ -637,7 +637,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[,.)\n]|(\s+(then|instanceof|and|or|not|is|isnt)\b|\s*(==|=(?!>)|\?))))</string>
+					<string>(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[,.)\n]|(\s+(then|instanceof|and|or|not|is|isnt)\b|\s*(==|=(?!&gt;)|\?))))</string>
 					<key>name</key>
 					<string>variable.other.readwrite.instance.coffee</string>
 				</dict>

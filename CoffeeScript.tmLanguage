@@ -647,7 +647,7 @@
 							\??(
 								[\]\[,.)\n]|
 								(
-									\s+(and|if|instanceof|is|isnt|not|or|then|unless)\b|
+									\s+(and|if|instanceof|is|isnt|not|or|then|unless|when)\b|
 									\s*(==|=(?!&gt;)|\?)
 								)
 							)

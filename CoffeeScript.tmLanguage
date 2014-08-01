@@ -278,6 +278,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#static_variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#single_quoted_string</string>
 				</dict>
 				<dict>
@@ -539,6 +543,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#static_variable</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#instance_variable</string>
 		</dict>
 		<dict>
@@ -654,6 +662,18 @@
 						)</string>
 					<key>name</key>
 					<string>variable.other.readwrite.instance.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>static_variable</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)([A-Z]\w*)(?=(\.\w+)+)</string>
+					<key>name</key>
+					<string>variable.other.readwrite.static.coffee</string>
 				</dict>
 			</array>
 		</dict>

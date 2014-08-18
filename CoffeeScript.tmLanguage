@@ -561,7 +561,7 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#class_access</string>
+			<string>#class_usage</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -693,21 +693,27 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)((?&lt;=\.)|@)([A-Z_]+\b)</string>
+					<string>(?x)(?&lt;=\.)[A-Z_]+\b(?!\s*[.:=])</string>
 					<key>name</key>
-					<string>variable.other.readwrite.static</string>
+					<string>variable.other.readwrite.static.usage.coffee</string>
 				</dict>
+        <dict>
+          <key>match</key>
+          <string>(?x)((?&lt;!\w)|@)[A-Z_]+(?=\s*[:=])</string>
+          <key>name</key>
+          <string>variable.other.readwrite.static.definition.coffee</string>
+        </dict>
 			</array>
 		</dict>
-		<key>class_access</key>
+		<key>class_usage</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)((?&lt;!\.)[A-Z]\w*)(?=(\.\w+)+)</string>
+					<string>(?x)(?&lt;!\.)\b[A-Z]\w*(?=(\.\w+)+)</string>
 					<key>name</key>
-					<string>entity.name.type.class.access.coffee</string>
+					<string>entity.name.type.class.usage.coffee</string>
 				</dict>
 			</array>
 		</dict>

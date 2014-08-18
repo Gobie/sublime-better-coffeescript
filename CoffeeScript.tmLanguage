@@ -156,6 +156,18 @@
 					<key>name</key>
 					<string>constant.character.escape.coffee</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>@\w*</string>
+					<key>name</key>
+					<string>storage.type.annotation.coffeescript</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=\{)[^{}]+(?=\})</string>
+					<key>name</key>
+					<string>storage.type.annotation.type.coffeescript</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -180,6 +192,12 @@
 					<string>@\w*</string>
 					<key>name</key>
 					<string>storage.type.annotation.coffeescript</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=\{)[^{}]+(?=\})</string>
+					<key>name</key>
+					<string>storage.type.annotation.type.coffeescript</string>
 				</dict>
 			</array>
 		</dict>

@@ -692,6 +692,20 @@
 				</dict>
 			</array>
 		</dict>
+    <key>instance_method</key>
+    <dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>match</key>
+          <string>(?x)(@|this\.)
+            ([a-zA-Z_\$]\w*)?
+            (?=\s+|\?|\()</string>
+          <key>name</key>
+          <string>variable.other.method.instance.coffee</string>
+        </dict>
+      </array>
+    </dict>
 		<key>static_variable</key>
 		<dict>
 			<key>patterns</key>
@@ -719,20 +733,6 @@
 					<string>(?x)(?&lt;!\.)\b[A-Z]\w*(?=(\.\w+)+)</string>
 					<key>name</key>
 					<string>entity.name.type.class.usage.coffee</string>
-				</dict>
-			</array>
-		</dict>
-		<key>instance_method</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(?x)(@|this\.)
-						([a-zA-Z_\$]\w*)?
-						(?=\s+|\?|\()</string>
-					<key>name</key>
-					<string>variable.other.method.instance.coffee</string>
 				</dict>
 			</array>
 		</dict>

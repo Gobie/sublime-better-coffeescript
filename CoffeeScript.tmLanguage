@@ -25,6 +25,10 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>include</key>
+			<string>#whitespace</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -87,6 +91,13 @@
 			</dict>
 			<key>name</key>
 			<string>string.quoted.single.heredoc.coffee</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#whitespace</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -118,6 +129,10 @@
 					<string>\\.</string>
 					<key>name</key>
 					<string>constant.character.escape.coffee</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#whitespace</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -583,10 +598,10 @@
 			<key>include</key>
 			<string>#an_library</string>
 		</dict>
-    <dict>
-      <key>include</key>
-      <string>#builder_library</string>
-    </dict>
+		<dict>
+			<key>include</key>
+			<string>#builder_library</string>
+		</dict>
 		<dict>
 			<key>include</key>
 			<string>#este_library</string>
@@ -679,7 +694,7 @@
 						([a-zA-Z_\$]\w*)?
 						(?=
 							\??
-              (
+							(
 								[\]\[,.)\n]|
 								(
 									\s+(and|else|if|instanceof|in|is|isnt|not|or|then|unless|when)\b|
@@ -692,20 +707,20 @@
 				</dict>
 			</array>
 		</dict>
-    <key>instance_method</key>
-    <dict>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>match</key>
-          <string>(?x)(@|this\.)
-            ([a-zA-Z_\$]\w*)?
-            (?=\s+|\?|\()</string>
-          <key>name</key>
-          <string>variable.other.method.instance.coffee</string>
-        </dict>
-      </array>
-    </dict>
+		<key>instance_method</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)(@|this\.)
+						([a-zA-Z_\$]\w*)?
+						(?=\s+|\?|\()</string>
+					<key>name</key>
+					<string>variable.other.method.instance.coffee</string>
+				</dict>
+			</array>
+		</dict>
 		<key>static_variable</key>
 		<dict>
 			<key>patterns</key>
@@ -716,12 +731,12 @@
 					<key>name</key>
 					<string>variable.other.readwrite.static.usage.coffee</string>
 				</dict>
-        <dict>
-          <key>match</key>
-          <string>(?x)((?&lt;!\w)|@)[A-Z_]+(?=\s*[:=])</string>
-          <key>name</key>
-          <string>variable.other.readwrite.static.definition.coffee</string>
-        </dict>
+				<dict>
+					<key>match</key>
+					<string>(?x)((?&lt;!\w)|@)[A-Z_]+(?=\s*[:=])</string>
+					<key>name</key>
+					<string>variable.other.readwrite.static.definition.coffee</string>
+				</dict>
 			</array>
 		</dict>
 		<key>class_usage</key>
@@ -760,18 +775,18 @@
 				</dict>
 			</array>
 		</dict>
-    <key>builder_library</key>
-    <dict>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>match</key>
-          <string>builder(\.\w+)+</string>
-          <key>name</key>
-          <string>variable.other.builder</string>
-        </dict>
-      </array>
-    </dict>
+		<key>builder_library</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>builder(\.\w+)+</string>
+					<key>name</key>
+					<string>variable.other.builder</string>
+				</dict>
+			</array>
+		</dict>
 		<key>este_library</key>
 		<dict>
 			<key>patterns</key>
@@ -904,6 +919,30 @@
 					<string>([a-zA-Z\$_]\w*(\.\w+)*)</string>
 					<key>name</key>
 					<string>variable.assignment.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>whitespace</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>^[\s\t]+</string>
+					<key>name</key>
+					<string>meta.whitespace.leading</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[\s\t]+$</string>
+					<key>name</key>
+					<string>meta.whitespace.trailing</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[\s\t]+</string>
+					<key>name</key>
+					<string>meta.whitespace</string>
 				</dict>
 			</array>
 		</dict>

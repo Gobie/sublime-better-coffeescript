@@ -583,6 +583,10 @@
 			<key>include</key>
 			<string>#an_library</string>
 		</dict>
+    <dict>
+      <key>include</key>
+      <string>#builder_library</string>
+    </dict>
 		<dict>
 			<key>include</key>
 			<string>#este_library</string>
@@ -755,6 +759,18 @@
 				</dict>
 			</array>
 		</dict>
+    <key>builder_library</key>
+    <dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>match</key>
+          <string>builder(\.\w+)+</string>
+          <key>name</key>
+          <string>variable.other.builder</string>
+        </dict>
+      </array>
+    </dict>
 		<key>este_library</key>
 		<dict>
 			<key>patterns</key>

@@ -348,21 +348,21 @@
 			<string>meta.function.coffee</string>
 		</dict>
 		<dict>
-				<key>comment</key>
-				<string>Show well-known functions from Express and Mocha in Go To Symbol view</string>
-				<key>name</key>
-				<string>meta.function.symbols.coffee</string>
-				<key>begin</key>
-				<string>^\s*(describe|it|app\.(get|post|put|all|del|delete))[^\w]</string>
-				<key>end</key>
-				<string>$</string>
-				<key>patterns</key>
-				<array>
-						<dict>
-								<key>include</key>
-								<string>$self</string>
-						</dict>
-				</array>
+			<key>begin</key>
+			<string>^\s*(describe|it|app\.(get|post|put|all|del|delete))[^\w]</string>
+			<key>comment</key>
+			<string>Show well-known functions from Express and Mocha in Go To Symbol view</string>
+			<key>end</key>
+			<string>$</string>
+			<key>name</key>
+			<string>meta.function.symbols.coffee</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -578,6 +578,42 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>an_library</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>an(\.\w+)+</string>
+					<key>name</key>
+					<string>variable.other.an</string>
+				</dict>
+			</array>
+		</dict>
+		<key>builder_library</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>builder(\.\w+)+</string>
+					<key>name</key>
+					<string>variable.other.builder</string>
+				</dict>
+			</array>
+		</dict>
+		<key>class_usage</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)(?&lt;!\.)\b[A-Z]\w*(?=(\.\w+)+)</string>
+					<key>name</key>
+					<string>entity.name.type.class.usage.coffee</string>
+				</dict>
+			</array>
+		</dict>
 		<key>double_quoted_string</key>
 		<dict>
 			<key>patterns</key>
@@ -641,57 +677,15 @@
 				</dict>
 			</array>
 		</dict>
-		<key>instance_variable</key>
+		<key>este_library</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[,.)\n]|(\s+(and|else|if|instanceof|in|is|isnt|not|or|then|unless|when)\b|\s*(==|=(?!&gt;)|\?=))))</string>
+					<string>este(\.\w+)+</string>
 					<key>name</key>
-					<string>variable.other.readwrite.instance.coffee</string>
-				</dict>
-			</array>
-		</dict>
-		<key>instance_method</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\s+|\?|\()</string>
-					<key>name</key>
-					<string>variable.other.method.instance.coffee</string>
-				</dict>
-			</array>
-		</dict>
-		<key>static_variable</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(?x)(?&lt;=\.)[A-Z_]+\b(?!\s*[.:=])</string>
-					<key>name</key>
-					<string>variable.other.readwrite.static.usage.coffee</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?x)((?&lt;!\w)|@)[A-Z_]+(?=\s*[:=])</string>
-					<key>name</key>
-					<string>variable.other.readwrite.static.definition.coffee</string>
-				</dict>
-			</array>
-		</dict>
-		<key>class_usage</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(?x)(?&lt;!\.)\b[A-Z]\w*(?=(\.\w+)+)</string>
-					<key>name</key>
-					<string>entity.name.type.class.usage.coffee</string>
+					<string>variable.other.este</string>
 				</dict>
 			</array>
 		</dict>
@@ -707,39 +701,27 @@
 				</dict>
 			</array>
 		</dict>
-		<key>an_library</key>
+		<key>instance_method</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>an(\.\w+)+</string>
+					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\s+|\?|\()</string>
 					<key>name</key>
-					<string>variable.other.an</string>
+					<string>variable.other.method.instance.coffee</string>
 				</dict>
 			</array>
 		</dict>
-		<key>builder_library</key>
+		<key>instance_variable</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>builder(\.\w+)+</string>
+					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[,.)\n]|(\s+(and|else|if|instanceof|in|is|isnt|not|or|then|unless|when)\b|\s*(==|=(?!&gt;)|\?=))))</string>
 					<key>name</key>
-					<string>variable.other.builder</string>
-				</dict>
-			</array>
-		</dict>
-		<key>este_library</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>este(\.\w+)+</string>
-					<key>name</key>
-					<string>variable.other.este</string>
+					<string>variable.other.readwrite.instance.coffee</string>
 				</dict>
 			</array>
 		</dict>
@@ -843,6 +825,24 @@
 							<string>constant.character.escape.coffee</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>static_variable</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)(?&lt;=\.)[A-Z_]+\b(?!\s*[.:=])</string>
+					<key>name</key>
+					<string>variable.other.readwrite.static.usage.coffee</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?x)((?&lt;!\w)|@)[A-Z_]+(?=\s*[:=])</string>
+					<key>name</key>
+					<string>variable.other.readwrite.static.definition.coffee</string>
 				</dict>
 			</array>
 		</dict>

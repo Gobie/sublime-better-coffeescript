@@ -492,7 +492,7 @@
 				isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|
 				reduce(Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|
 				unshift|valueOf
-			))\b</string>
+			))\b(?![.?])</string>
 			<key>name</key>
 			<string>support.function.method.array.coffee</string>
 		</dict>

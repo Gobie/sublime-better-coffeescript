@@ -1046,13 +1046,18 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(/)</string>
+					<string>(/)([imgy]{0,4})</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.regexp.end.coffee</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.option-toggle.regexp.coffee</string>
 						</dict>
 					</dict>
 					<key>name</key>
@@ -1181,12 +1186,6 @@
 					<string>(?&lt;=^|\s)#\s[[a-zA-Z0-9,. \t?!-:][^\x{00}-\x{7F}]]*$</string>
 					<key>name</key>
 					<string>comment.line.number-sign.regexp.coffee</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\(\?[igmy]+\)</string>
-					<key>name</key>
-					<string>keyword.other.option-toggle.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>match</key>

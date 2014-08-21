@@ -408,9 +408,10 @@ repository:
     - begin: (/)(?=[^\n]*/)
       beginCaptures:
         '1': {name: punctuation.definition.regexp.start.coffee}
-      end: (/)
+      end: (/)([imgy]{0,4})
       endCaptures:
         '1': {name: punctuation.definition.regexp.end.coffee}
+        '2': {name: keyword.other.option-toggle.regexp.coffee}
       name: string.regexp.coffee
       patterns:
       - include: '#regexp_inner'
@@ -423,7 +424,6 @@ repository:
     - {match: \|, name: keyword.operator.or.regexp.coffee}
     - {begin: '\(\?\#', end: \), name: comment.block.regexp.coffee}
     - {match: '(?<=^|\s)#\s[[a-zA-Z0-9,. \t?!-:][^\x{00}-\x{7F}]]*$', name: comment.line.number-sign.regexp.coffee}
-    - {match: '\(\?[igmy]+\)', name: keyword.other.option-toggle.regexp.coffee}
     - {match: '(\()(\?P=([a-zA-Z_][a-zA-Z_0-9]*\w*))(\))', name: keyword.other.back-reference.named.regexp.coffee}
     - begin: (\()((\?=)|(\?!)|(\?<=)|(\?<!))
       beginCaptures:

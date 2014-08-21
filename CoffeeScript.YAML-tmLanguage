@@ -79,8 +79,7 @@ patterns:
   - include: '#interpolated_coffee'
   - include: '#embedded_comment'
 
-- name: string.regexp.coffee
-  match: /(?![\s=/*+{}?]).*?(?!\\)/[igmy]{0,4}(?![a-zA-Z0-9])
+- include: '#regexp'
 
 - name: keyword.control.coffee
   match: (?x)\b(?<![\.\$])(break|by|catch|continue|else|finally|for|in|of|if|return|switch|then|throw|try|unless|when|while|until|loop|do|(?<=for)\s+own)(?!\s*:)\b
@@ -373,6 +372,86 @@ repository:
     patterns:
     - name: constant.language.coffee
       match: \b(Infinity|NaN|undefined)\b
+
+  regexp:
+    patterns:
+    - begin: (/)
+      beginCaptures:
+        '1': {name: punctuation.definition.regexp}
+      end: (/)
+      endCaptures:
+        '1': {name: punctuation.definition.regexp}
+      name: string.regexp.coffee
+      patterns:
+      - include: '#regexp_inner'
+
+  regexp_inner:
+    patterns:
+    - {match: '\\[bBAZzG]|\^|\$', name: keyword.control.anchor.regexp}
+    - {match: '\\[1-9][0-9]?', name: keyword.other.back-reference.regexp}
+    - {match: '[?+*][?+]?|\{(\d+,\d+|\d+,|,\d+|\d+)\}\??', name: keyword.operator.quantifier.regexp}
+    - {match: \|, name: keyword.operator.or.regexp}
+    - {begin: '\(\?\#', end: \), name: comment.block.regexp}
+    - {match: '(?<=^|\s)#\s[[a-zA-Z0-9,. \t?!-:][^\x{00}-\x{7F}]]*$', name: comment.line.number-sign.regexp}
+    - {match: '\(\?[igmy]+\)', name: keyword.other.option-toggle.regexp}
+    - {match: '(\()(\?P=([a-zA-Z_][a-zA-Z_0-9]*\w*))(\))', name: keyword.other.back-reference.named.regexp}
+    - begin: (\()((\?=)|(\?!)|(\?<=)|(\?<!))
+      beginCaptures:
+        '1': {name: punctuation.definition.group.regexp}
+        '2': {name: punctuation.definition.group.assertion.regexp}
+        '3': {name: meta.assertion.look-ahead.regexp}
+        '4': {name: meta.assertion.negative-look-ahead.regexp}
+        '5': {name: meta.assertion.look-behind.regexp}
+        '6': {name: meta.assertion.negative-look-behind.regexp}
+      end: (\))
+      endCaptures:
+        '1': {name: punctuation.definition.group.regexp}
+      name: meta.group.assertion.regexp
+      patterns:
+      - {include: '#regexp_inner'}
+    - begin: (\()(\?\(([1-9][0-9]?|[a-zA-Z_][a-zA-Z_0-9]*)\))
+      beginCaptures:
+        '1': {name: punctuation.definition.group.regexp}
+        '2': {name: punctuation.definition.group.assertion.conditional.regexp}
+        '3': {name: entity.name.section.back-reference.regexp}
+      end: (\))
+      name: meta.group.assertion.conditional.regexp
+      patterns:
+      - {include: '#regexp_inner'}
+    - begin: (\()((\?P<)([a-z]\w*)(>)|(\?:))?
+      beginCaptures:
+        '1': {name: punctuation.definition.group.regexp}
+        '3': {name: punctuation.definition.group.capture.regexp}
+        '4': {name: entity.name.section.group.regexp}
+        '5': {name: punctuation.definition.group.capture.regexp}
+        '6': {name: punctuation.definition.group.no-capture.regexp}
+      end: (\))
+      endCaptures:
+        '1': {name: punctuation.definition.group.regexp}
+      name: meta.group.regexp
+      patterns:
+      - {include: '#regexp_inner'}
+    - {include: '#regexp_character_class'}
+
+  regexp_character_class:
+    patterns:
+    - {match: '\\[wWsSdDhH]|\.', name: constant.character.regexp_character_class.regexp}
+    - {match: \\., name: constant.character.escape.backslash.regexp}
+    - begin: (\[)(\^)?
+      beginCaptures:
+        '1': {name: punctuation.definition.regexp_character_class.regexp}
+        '2': {name: keyword.operator.negation.regexp}
+      end: (\])
+      endCaptures:
+        '1': {name: punctuation.definition.regexp_character_class.regexp}
+      name: constant.other.regexp_character_class.set.regexp
+      patterns:
+      - {include: '#regexp_character_class'}
+      - captures:
+          '2': {name: constant.character.escape.backslash.regexp}
+          '4': {name: constant.character.escape.backslash.regexp}
+        match: ((\\.)|.)\-((\\.)|[^\]])
+        name: constant.other.regexp_character_class.range.regexp
 firstLineMatch: ^#!.*\bcoffee
 foldingStartMarker: ^\s*class\s+\S.*$|.*(->|=>)\s*$|.*[\[{]\s*$
 foldingStopMarker: ^\s*$|^\s*[}\]]\s*$

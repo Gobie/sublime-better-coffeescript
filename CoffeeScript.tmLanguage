@@ -90,7 +90,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.single.heredoc.coffee</string>
+			<string>string.quoted.triple.single.coffee</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -121,7 +121,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.double.heredoc.coffee</string>
+			<string>string.quoted.triple.double.coffee</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -162,7 +162,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.script.coffee</string>
+			<string>string.quoted.other.script.coffee</string>
 			<key>patterns</key>
 			<array>
 				<dict>

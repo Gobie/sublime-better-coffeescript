@@ -20,7 +20,7 @@ patterns:
     '1': {name: keyword.operator.new.coffee}
     '2': {name: support.class.custom.coffee}
 
-- name: string.quoted.single.heredoc.coffee
+- name: string.quoted.triple.single.coffee
   begin: "'''"
   beginCaptures:
     '0': {name: punctuation.definition.string.begin.coffee}
@@ -30,7 +30,7 @@ patterns:
   patterns:
   - include: '#whitespace'
 
-- name: string.quoted.double.heredoc.coffee
+- name: string.quoted.triple.double.coffee
   begin: '"""'
   beginCaptures:
     '0': {name: punctuation.definition.string.begin.coffee}
@@ -43,7 +43,7 @@ patterns:
   - include: '#whitespace'
   - include: '#interpolated_coffee'
 
-- name: string.quoted.script.coffee
+- name: string.quoted.other.script.coffee
   begin: '`'
   beginCaptures:
     '0': {name: punctuation.definition.string.begin.coffee}

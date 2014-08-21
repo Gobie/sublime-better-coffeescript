@@ -178,10 +178,8 @@
 					<string>storage.type.annotation.coffee</string>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>(?&lt;=\{)[^{}]+(?=\})</string>
-					<key>name</key>
-					<string>storage.type.annotation.type.coffee</string>
+					<key>include</key>
+					<string>#annotation_type</string>
 				</dict>
 			</array>
 		</dict>
@@ -206,13 +204,11 @@
 					<key>match</key>
 					<string>@\w*</string>
 					<key>name</key>
-					<string>storage.type.annotation.coffee</string>
+					<string>storage.type.annotation.keyword.coffee</string>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>(?&lt;=\{)[^{}]+(?=\})</string>
-					<key>name</key>
-					<string>storage.type.annotation.type.coffee</string>
+					<key>include</key>
+					<string>#annotation_type</string>
 				</dict>
 			</array>
 		</dict>
@@ -262,10 +258,8 @@
 			<string>keyword.control.coffee</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>(?x)and=|or=|!|%|&amp;|\^|\*|\/|(\-)?\-(?!&gt;)|\+\+|\+|~|==|=(?!&gt;)|!=|&lt;=|&gt;=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&lt;&gt;|&lt;|&gt;|!|&amp;&amp;|\.\.(\.)?|\?|\||\|\||\:|\*=|(?&lt;!\()/=|%=|\+=|\-=|&amp;=|\^=|\b(?&lt;![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)(?![:])\b</string>
-			<key>name</key>
-			<string>keyword.operator.coffee</string>
+			<key>include</key>
+			<string>#keyword_operator</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -430,10 +424,8 @@
 			<string>keyword.other.coffee</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>(?x)\b(Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol)\b</string>
-			<key>name</key>
-			<string>support.class.native.coffee</string>
+			<key>include</key>
+			<string>#native_class</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -490,10 +482,8 @@
 			<string>support.function.static.number.coffee</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>\b(Infinity|NaN|undefined)\b</string>
-			<key>name</key>
-			<string>constant.language.coffee</string>
+			<key>include</key>
+			<string>#constants</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -590,6 +580,93 @@
 				</dict>
 			</array>
 		</dict>
+		<key>annotation_type</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>{</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.annotation.type.begin.coffee</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>}</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.annotation.type.end.coffee</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.storage.type.annotation.type.coffee</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#an_library</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#builder_library</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#este_library</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#google_closure_library</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#constants</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#annotation_types</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#keyword_operator</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\w+</string>
+							<key>name</key>
+							<string>storage.type.annotation.type.coffee</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#whitespace</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>annotation_types</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)\b(string|boolean|number)\b</string>
+					<key>name</key>
+					<string>storage.type.annotation.types.coffee</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#native_class</string>
+				</dict>
+			</array>
+		</dict>
 		<key>builder_library</key>
 		<dict>
 			<key>patterns</key>
@@ -611,6 +688,18 @@
 					<string>(?x)(?&lt;!\.)\b[A-Z]\w*(?=(\.\w+)+)</string>
 					<key>name</key>
 					<string>entity.name.type.class.usage.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>constants</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(Infinity|NaN|undefined)\b</string>
+					<key>name</key>
+					<string>constant.language.coffee</string>
 				</dict>
 			</array>
 		</dict>
@@ -774,6 +863,30 @@
 							<string>$self</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>keyword_operator</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)and=|or=|!|%|&amp;|\^|\*|\/|(\-)?\-(?!&gt;)|\+\+|\+|~|==|=(?!&gt;)|!=|&lt;=|&gt;=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&lt;&gt;|&lt;|&gt;|!|&amp;&amp;|\.\.(\.)?|\?|\||\|\||\:|\*=|(?&lt;!\()/=|%=|\+=|\-=|&amp;=|\^=|\b(?&lt;![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)(?![:])\b</string>
+					<key>name</key>
+					<string>keyword.operator.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>native_class</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)\b(Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol)\b</string>
+					<key>name</key>
+					<string>support.class.native.coffee</string>
 				</dict>
 			</array>
 		</dict>

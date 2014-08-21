@@ -55,8 +55,7 @@ patterns:
     match: \\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)
   - name: storage.type.annotation.coffee
     match: '@\w*'
-  - name: storage.type.annotation.type.coffee
-    match: (?<=\{)[^{}]+(?=\})
+  - include: '#annotation_type'
 
 - name: comment.block.coffee
   begin: (?<!#)###(?!#)
@@ -64,10 +63,9 @@ patterns:
   captures:
     '0': {name: punctuation.definition.comment.coffee}
   patterns:
-  - name: storage.type.annotation.coffee
+  - name: storage.type.annotation.keyword.coffee
     match: '@\w*'
-  - name: storage.type.annotation.type.coffee
-    match: (?<=\{)[^{}]+(?=\})
+  - include: '#annotation_type'
 
 - name: comment.line.number-sign.coffee
   match: (#)(?!\{).*$\n?
@@ -86,8 +84,7 @@ patterns:
 
 - name: keyword.control.coffee
   match: (?x)\b(?<![\.\$])(break|by|catch|continue|else|finally|for|in|of|if|return|switch|then|throw|try|unless|when|while|until|loop|do|(?<=for)\s+own)(?!\s*:)\b
-- name: keyword.operator.coffee
-  match: (?x)and=|or=|!|%|&|\^|\*|\/|(\-)?\-(?!>)|\+\+|\+|~|==|=(?!>)|!=|<=|>=|<<=|>>=|>>>=|<>|<|>|!|&&|\.\.(\.)?|\?|\||\|\||\:|\*=|(?<!\()/=|%=|\+=|\-=|&=|\^=|\b(?<![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)(?![:])\b
+- include: '#keyword_operator'
 - name: meta.variable.assignment.destructured.coffee
   begin: (?<=\s|^)([\[\{])(?=.*?[\]\}]\s+[:=])
   beginCaptures:
@@ -144,8 +141,7 @@ patterns:
 - name: keyword.other.coffee
   match: \b(debugger|\\)\b
 
-- name: support.class.native.coffee
-  match: (?x)\b(Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest)\b
+- include: '#native_class'
 - name: support.function.console.coffee
   match: ((?<=console\.)(assert|clear|count|debug|dir|dirxml|error|group|groupCollapsed|groupEnd|info|log|profile|profileEnd|time|timeEnd|timeline|timelineEnd|timeStampt|trace|warn))\b
 
@@ -166,8 +162,7 @@ patterns:
   match: (?x)((?<=Math\.)(abs|acos|acosh|asin|asinh|atan|atan2|atanh|ceil|cos|cosh|exp|expm1|floor|hypot|log|log10|log1p|log2|max|min|pow|random|round|sign|sin|sinh|sqrt|tan|tanh|trunc))\b
 - name: support.function.static.number.coffee
   match: (?x)((?<=Number\.)(is(Finite|Integer|NaN)|toInteger))\b
-- name: constant.language.coffee
-  match: \b(Infinity|NaN|undefined)\b
+- include: '#constants'
 
 - name: punctuation.terminator.statement.coffee
   match: \;
@@ -323,6 +318,48 @@ repository:
       match: '[\s\t]+$'
     - name: meta.whitespace
       match: '[\s\t]+'
+
+  annotation_type:
+    patterns:
+    - name: meta.storage.type.annotation.type.coffee
+      begin: "{"
+      beginCaptures:
+        '0': {name: punctuation.definition.annotation.type.begin.coffee}
+      end: "}"
+      endCaptures:
+        '0': {name: punctuation.definition.annotation.type.end.coffee}
+      patterns:
+      - include: '#an_library'
+      - include: '#builder_library'
+      - include: '#este_library'
+      - include: '#google_closure_library'
+      - include: '#constants'
+      - include: '#annotation_types'
+      - include: '#keyword_operator'
+      - name: storage.type.annotation.type.coffee
+        match: '\w+'
+      - include: '#whitespace'
+
+  constants:
+    patterns:
+    - name: constant.language.coffee
+      match: \b(Infinity|NaN|undefined)\b
+
+  annotation_types:
+    patterns:
+    - name: storage.type.annotation.types.coffee
+      match: (?x)\b(string|boolean|number)\b
+    - include: '#native_class'
+
+  native_class:
+    patterns:
+    - name: support.class.native.coffee
+      match: (?x)\b(Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol)\b
+
+  keyword_operator:
+    patterns:
+    - name: keyword.operator.coffee
+      match: (?x)and=|or=|!|%|&|\^|\*|\/|(\-)?\-(?!>)|\+\+|\+|~|==|=(?!>)|!=|<=|>=|<<=|>>=|>>>=|<>|<|>|!|&&|\.\.(\.)?|\?|\||\|\||\:|\*=|(?<!\()/=|%=|\+=|\-=|&=|\^=|\b(?<![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)(?![:])\b
 firstLineMatch: ^#!.*\bcoffee
 foldingStartMarker: ^\s*class\s+\S.*$|.*(->|=>)\s*$|.*[\[{]\s*$
 foldingStopMarker: ^\s*$|^\s*[}\]]\s*$

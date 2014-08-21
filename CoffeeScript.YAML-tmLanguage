@@ -368,7 +368,7 @@ repository:
   annotation_definition:
     patterns:
     - name: storage.type.annotation.types.coffee
-      match: (?x)\b(string|boolean|number)\b
+      match: (?x)\b(string|boolean|number|Element|Node)\b
     - name: storage.type.annotation.keywords.coffee
       match: (?x)\b(function|new|this)\b
     - include: '#native_class'

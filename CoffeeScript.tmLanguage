@@ -228,6 +228,10 @@
 							<key>include</key>
 							<string>#whitespace</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>
@@ -268,6 +272,10 @@
 						<dict>
 							<key>include</key>
 							<string>#interpolated_coffee</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
 						</dict>
 					</array>
 				</dict>
@@ -858,6 +866,10 @@
 							<key>include</key>
 							<string>#interpolated_coffee</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
+						</dict>
 					</array>
 				</dict>
 			</array>
@@ -1362,6 +1374,10 @@
 							<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)</string>
 							<key>name</key>
 							<string>constant.character.escape.coffee</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
 						</dict>
 					</array>
 				</dict>

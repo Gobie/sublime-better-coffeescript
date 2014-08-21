@@ -201,13 +201,23 @@ patterns:
 repository:
   an_library:
     patterns:
-    - name: variable.other.an
+    - name: variable.other.an.coffee
       match: an(\.\w+)+
 
   builder_library:
     patterns:
-    - name: variable.other.builder
+    - name: variable.other.builder.coffee
       match: builder(\.\w+)+
+
+  este_library:
+    patterns:
+    - name: variable.other.este.coffee
+      match: este(\.\w+)+
+
+  google_closure_library:
+    patterns:
+    - name: variable.other.goog.coffee
+      match: goog(\.\w+)+
 
   class_usage:
     patterns:
@@ -234,16 +244,6 @@ repository:
       match: (?<!\\)(#).*$\n?
       captures:
         '1': {name: punctuation.definition.comment.coffee}
-
-  este_library:
-    patterns:
-    - name: variable.other.este
-      match: este(\.\w+)+
-
-  google_closure_library:
-    patterns:
-    - name: variable.other.goog
-      match: goog(\.\w+)+
 
   instance_method:
     patterns:

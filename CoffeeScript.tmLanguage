@@ -568,7 +568,7 @@
 					<key>match</key>
 					<string>an(\.\w+)+</string>
 					<key>name</key>
-					<string>variable.other.an</string>
+					<string>variable.other.an.coffee</string>
 				</dict>
 			</array>
 		</dict>
@@ -679,7 +679,7 @@
 					<key>match</key>
 					<string>builder(\.\w+)+</string>
 					<key>name</key>
-					<string>variable.other.builder</string>
+					<string>variable.other.builder.coffee</string>
 				</dict>
 			</array>
 		</dict>
@@ -814,7 +814,7 @@
 					<key>match</key>
 					<string>este(\.\w+)+</string>
 					<key>name</key>
-					<string>variable.other.este</string>
+					<string>variable.other.este.coffee</string>
 				</dict>
 			</array>
 		</dict>
@@ -826,7 +826,7 @@
 					<key>match</key>
 					<string>goog(\.\w+)+</string>
 					<key>name</key>
-					<string>variable.other.goog</string>
+					<string>variable.other.goog.coffee</string>
 				</dict>
 			</array>
 		</dict>

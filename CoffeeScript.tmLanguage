@@ -243,6 +243,10 @@
 					<key>include</key>
 					<string>#embedded_comment</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#regexp_inner</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>

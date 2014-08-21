@@ -78,6 +78,7 @@ patterns:
   patterns:
   - include: '#interpolated_coffee'
   - include: '#embedded_comment'
+  - include: '#regexp_inner'
 
 - include: '#regexp'
 

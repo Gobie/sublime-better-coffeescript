@@ -118,14 +118,10 @@ patterns:
 - name: storage.type.function.coffee
   match: '[=-]>'
 
-- name: constant.language.boolean.true.coffee
-  match: \b(?<!\.)(true|on|yes)(?!\s*[:=])\b
-
-- name: constant.language.boolean.false.coffee
-  match: \b(?<!\.)(false|off|no)(?!\s*[:=])\b
-
-- name: constant.language.null.coffee
-  match: \b(?<!\.)null(?!\s*[:=])\b
+- include: '#constant_true'
+- include: '#constant_false'
+- include: '#constant_null'
+- include: '#constant_rest'
 
 - name: variable.language.coffee
   match: \b(?<!\.)(extends)(?!\s*[:=])\b
@@ -162,7 +158,6 @@ patterns:
   match: (?x)((?<=Math\.)(abs|acos|acosh|asin|asinh|atan|atan2|atanh|ceil|cos|cosh|exp|expm1|floor|hypot|log|log10|log1p|log2|max|min|pow|random|round|sign|sin|sinh|sqrt|tan|tanh|trunc))\b
 - name: support.function.static.number.coffee
   match: (?x)((?<=Number\.)(is(Finite|Integer|NaN)|toInteger))\b
-- include: '#constants'
 
 - name: punctuation.terminator.statement.coffee
   match: \;
@@ -333,17 +328,15 @@ repository:
       - include: '#builder_library'
       - include: '#este_library'
       - include: '#google_closure_library'
-      - include: '#constants'
+      - include: '#constant_true'
+      - include: '#constant_false'
+      - include: '#constant_null'
+      - include: '#constant_rest'
       - include: '#annotation_types'
       - include: '#keyword_operator'
       - name: storage.type.annotation.type.coffee
         match: '\w+'
       - include: '#whitespace'
-
-  constants:
-    patterns:
-    - name: constant.language.coffee
-      match: \b(Infinity|NaN|undefined)\b
 
   annotation_types:
     patterns:
@@ -360,6 +353,26 @@ repository:
     patterns:
     - name: keyword.operator.coffee
       match: (?x)and=|or=|!|%|&|\^|\*|\/|(\-)?\-(?!>)|\+\+|\+|~|==|=(?!>)|!=|<=|>=|<<=|>>=|>>>=|<>|<|>|!|&&|\.\.(\.)?|\?|\||\|\||\:|\*=|(?<!\()/=|%=|\+=|\-=|&=|\^=|\b(?<![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)(?![:])\b
+
+  constant_true:
+    patterns:
+    - name: constant.language.boolean.true.coffee
+      match: \b(?<!\.)(true|on|yes)(?!\s*[:=])\b
+
+  constant_false:
+    patterns:
+    - name: constant.language.boolean.false.coffee
+      match: \b(?<!\.)(false|off|no)(?!\s*[:=])\b
+
+  constant_null:
+    patterns:
+    - name: constant.language.null.coffee
+      match: \b(?<!\.)null(?!\s*[:=])\b
+
+  constant_rest:
+    patterns:
+    - name: constant.language.coffee
+      match: \b(Infinity|NaN|undefined)\b
 firstLineMatch: ^#!.*\bcoffee
 foldingStartMarker: ^\s*class\s+\S.*$|.*(->|=>)\s*$|.*[\[{]\s*$
 foldingStopMarker: ^\s*$|^\s*[}\]]\s*$

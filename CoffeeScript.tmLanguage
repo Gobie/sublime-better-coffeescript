@@ -365,22 +365,20 @@
 			<string>storage.type.function.coffee</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>\b(?&lt;!\.)(true|on|yes)(?!\s*[:=])\b</string>
-			<key>name</key>
-			<string>constant.language.boolean.true.coffee</string>
+			<key>include</key>
+			<string>#constant_true</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>\b(?&lt;!\.)(false|off|no)(?!\s*[:=])\b</string>
-			<key>name</key>
-			<string>constant.language.boolean.false.coffee</string>
+			<key>include</key>
+			<string>#constant_false</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>\b(?&lt;!\.)null(?!\s*[:=])\b</string>
-			<key>name</key>
-			<string>constant.language.null.coffee</string>
+			<key>include</key>
+			<string>#constant_null</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#constant_rest</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -480,10 +478,6 @@
 			<string>(?x)((?&lt;=Number\.)(is(Finite|Integer|NaN)|toInteger))\b</string>
 			<key>name</key>
 			<string>support.function.static.number.coffee</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#constants</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -627,7 +621,19 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#constants</string>
+							<string>#constant_true</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#constant_false</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#constant_null</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#constant_rest</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -691,7 +697,31 @@
 				</dict>
 			</array>
 		</dict>
-		<key>constants</key>
+		<key>constant_false</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;!\.)(false|off|no)(?!\s*[:=])\b</string>
+					<key>name</key>
+					<string>constant.language.boolean.false.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>constant_null</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;!\.)null(?!\s*[:=])\b</string>
+					<key>name</key>
+					<string>constant.language.null.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>constant_rest</key>
 		<dict>
 			<key>patterns</key>
 			<array>
@@ -700,6 +730,18 @@
 					<string>\b(Infinity|NaN|undefined)\b</string>
 					<key>name</key>
 					<string>constant.language.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>constant_true</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;!\.)(true|on|yes)(?!\s*[:=])\b</string>
+					<key>name</key>
+					<string>constant.language.boolean.true.coffee</string>
 				</dict>
 			</array>
 		</dict>

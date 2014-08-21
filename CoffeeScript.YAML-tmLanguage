@@ -399,7 +399,7 @@ repository:
 
   regexp:
     patterns:
-    - begin: (/)
+    - begin: (/)(?=[^\n]*/)
       beginCaptures:
         '1': {name: punctuation.definition.regexp}
       end: (/)

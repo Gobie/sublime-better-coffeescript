@@ -1024,7 +1024,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.regexp</string>
+							<string>punctuation.definition.regexp.start.coffee</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1034,7 +1034,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.regexp</string>
+							<string>punctuation.definition.regexp.end.coffee</string>
 						</dict>
 					</dict>
 					<key>name</key>
@@ -1057,13 +1057,13 @@
 					<key>match</key>
 					<string>\\[wWsSdDhH]|\.</string>
 					<key>name</key>
-					<string>constant.character.regexp_character_class.regexp</string>
+					<string>constant.character.regexp_character_class.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>\\.</string>
 					<key>name</key>
-					<string>constant.character.escape.backslash.regexp</string>
+					<string>constant.character.escape.backslash.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1073,12 +1073,12 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.regexp_character_class.regexp</string>
+							<string>punctuation.definition.regexp_character_class.regexp.coffee</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.negation.regexp</string>
+							<string>keyword.operator.negation.regexp.coffee</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1088,11 +1088,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.regexp_character_class.regexp</string>
+							<string>punctuation.definition.regexp_character_class.regexp.coffee</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>constant.other.regexp_character_class.set.regexp</string>
+					<string>constant.other.regexp_character_class.set.regexp.coffee</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1105,18 +1105,18 @@
 								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>constant.character.escape.backslash.regexp</string>
+									<string>constant.character.escape.backslash.regexp.coffee</string>
 								</dict>
 								<key>4</key>
 								<dict>
 									<key>name</key>
-									<string>constant.character.escape.backslash.regexp</string>
+									<string>constant.character.escape.backslash.regexp.coffee</string>
 								</dict>
 							</dict>
 							<key>match</key>
 							<string>((\\.)|.)\-((\\.)|[^\]])</string>
 							<key>name</key>
-							<string>constant.other.regexp_character_class.range.regexp</string>
+							<string>constant.other.regexp_character_class.range.regexp.coffee</string>
 						</dict>
 					</array>
 				</dict>
@@ -1130,25 +1130,25 @@
 					<key>match</key>
 					<string>\\[bBAZzG]|\^|\$</string>
 					<key>name</key>
-					<string>keyword.control.anchor.regexp</string>
+					<string>keyword.control.anchor.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>\\[1-9][0-9]?</string>
 					<key>name</key>
-					<string>keyword.other.back-reference.regexp</string>
+					<string>keyword.other.back-reference.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>[?+*][?+]?|\{(\d+,\d+|\d+,|,\d+|\d+)\}\??</string>
 					<key>name</key>
-					<string>keyword.operator.quantifier.regexp</string>
+					<string>keyword.operator.quantifier.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>\|</string>
 					<key>name</key>
-					<string>keyword.operator.or.regexp</string>
+					<string>keyword.operator.or.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1156,25 +1156,25 @@
 					<key>end</key>
 					<string>\)</string>
 					<key>name</key>
-					<string>comment.block.regexp</string>
+					<string>comment.block.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?&lt;=^|\s)#\s[[a-zA-Z0-9,. \t?!-:][^\x{00}-\x{7F}]]*$</string>
 					<key>name</key>
-					<string>comment.line.number-sign.regexp</string>
+					<string>comment.line.number-sign.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>\(\?[igmy]+\)</string>
 					<key>name</key>
-					<string>keyword.other.option-toggle.regexp</string>
+					<string>keyword.other.option-toggle.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(\()(\?P=([a-zA-Z_][a-zA-Z_0-9]*\w*))(\))</string>
 					<key>name</key>
-					<string>keyword.other.back-reference.named.regexp</string>
+					<string>keyword.other.back-reference.named.regexp.coffee</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1184,32 +1184,32 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.regexp</string>
+							<string>punctuation.definition.group.regexp.coffee</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.assertion.regexp</string>
+							<string>punctuation.definition.group.assertion.regexp.coffee</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>meta.assertion.look-ahead.regexp</string>
+							<string>meta.assertion.look-ahead.regexp.coffee</string>
 						</dict>
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>meta.assertion.negative-look-ahead.regexp</string>
+							<string>meta.assertion.negative-look-ahead.regexp.coffee</string>
 						</dict>
 						<key>5</key>
 						<dict>
 							<key>name</key>
-							<string>meta.assertion.look-behind.regexp</string>
+							<string>meta.assertion.look-behind.regexp.coffee</string>
 						</dict>
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>meta.assertion.negative-look-behind.regexp</string>
+							<string>meta.assertion.negative-look-behind.regexp.coffee</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1219,11 +1219,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.regexp</string>
+							<string>punctuation.definition.group.regexp.coffee</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.group.assertion.regexp</string>
+					<string>meta.group.assertion.regexp.coffee</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1240,23 +1240,23 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.regexp</string>
+							<string>punctuation.definition.group.regexp.coffee</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.assertion.conditional.regexp</string>
+							<string>punctuation.definition.group.assertion.conditional.regexp.coffee</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.section.back-reference.regexp</string>
+							<string>entity.name.section.back-reference.regexp.coffee</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(\))</string>
 					<key>name</key>
-					<string>meta.group.assertion.conditional.regexp</string>
+					<string>meta.group.assertion.conditional.regexp.coffee</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1273,27 +1273,27 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.regexp</string>
+							<string>punctuation.definition.group.regexp.coffee</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.capture.regexp</string>
+							<string>punctuation.definition.group.capture.regexp.coffee</string>
 						</dict>
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.section.group.regexp</string>
+							<string>entity.name.section.group.regexp.coffee</string>
 						</dict>
 						<key>5</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.capture.regexp</string>
+							<string>punctuation.definition.group.capture.regexp.coffee</string>
 						</dict>
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.no-capture.regexp</string>
+							<string>punctuation.definition.group.no-capture.regexp.coffee</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1303,11 +1303,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.regexp</string>
+							<string>punctuation.definition.group.regexp.coffee</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.group.regexp</string>
+					<string>meta.group.regexp.coffee</string>
 					<key>patterns</key>
 					<array>
 						<dict>

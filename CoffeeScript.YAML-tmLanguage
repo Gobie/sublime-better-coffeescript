@@ -401,81 +401,81 @@ repository:
     patterns:
     - begin: (/)(?=[^\n]*/)
       beginCaptures:
-        '1': {name: punctuation.definition.regexp}
+        '1': {name: punctuation.definition.regexp.start.coffee}
       end: (/)
       endCaptures:
-        '1': {name: punctuation.definition.regexp}
+        '1': {name: punctuation.definition.regexp.end.coffee}
       name: string.regexp.coffee
       patterns:
       - include: '#regexp_inner'
 
   regexp_inner:
     patterns:
-    - {match: '\\[bBAZzG]|\^|\$', name: keyword.control.anchor.regexp}
-    - {match: '\\[1-9][0-9]?', name: keyword.other.back-reference.regexp}
-    - {match: '[?+*][?+]?|\{(\d+,\d+|\d+,|,\d+|\d+)\}\??', name: keyword.operator.quantifier.regexp}
-    - {match: \|, name: keyword.operator.or.regexp}
-    - {begin: '\(\?\#', end: \), name: comment.block.regexp}
-    - {match: '(?<=^|\s)#\s[[a-zA-Z0-9,. \t?!-:][^\x{00}-\x{7F}]]*$', name: comment.line.number-sign.regexp}
-    - {match: '\(\?[igmy]+\)', name: keyword.other.option-toggle.regexp}
-    - {match: '(\()(\?P=([a-zA-Z_][a-zA-Z_0-9]*\w*))(\))', name: keyword.other.back-reference.named.regexp}
+    - {match: '\\[bBAZzG]|\^|\$', name: keyword.control.anchor.regexp.coffee}
+    - {match: '\\[1-9][0-9]?', name: keyword.other.back-reference.regexp.coffee}
+    - {match: '[?+*][?+]?|\{(\d+,\d+|\d+,|,\d+|\d+)\}\??', name: keyword.operator.quantifier.regexp.coffee}
+    - {match: \|, name: keyword.operator.or.regexp.coffee}
+    - {begin: '\(\?\#', end: \), name: comment.block.regexp.coffee}
+    - {match: '(?<=^|\s)#\s[[a-zA-Z0-9,. \t?!-:][^\x{00}-\x{7F}]]*$', name: comment.line.number-sign.regexp.coffee}
+    - {match: '\(\?[igmy]+\)', name: keyword.other.option-toggle.regexp.coffee}
+    - {match: '(\()(\?P=([a-zA-Z_][a-zA-Z_0-9]*\w*))(\))', name: keyword.other.back-reference.named.regexp.coffee}
     - begin: (\()((\?=)|(\?!)|(\?<=)|(\?<!))
       beginCaptures:
-        '1': {name: punctuation.definition.group.regexp}
-        '2': {name: punctuation.definition.group.assertion.regexp}
-        '3': {name: meta.assertion.look-ahead.regexp}
-        '4': {name: meta.assertion.negative-look-ahead.regexp}
-        '5': {name: meta.assertion.look-behind.regexp}
-        '6': {name: meta.assertion.negative-look-behind.regexp}
+        '1': {name: punctuation.definition.group.regexp.coffee}
+        '2': {name: punctuation.definition.group.assertion.regexp.coffee}
+        '3': {name: meta.assertion.look-ahead.regexp.coffee}
+        '4': {name: meta.assertion.negative-look-ahead.regexp.coffee}
+        '5': {name: meta.assertion.look-behind.regexp.coffee}
+        '6': {name: meta.assertion.negative-look-behind.regexp.coffee}
       end: (\))
       endCaptures:
-        '1': {name: punctuation.definition.group.regexp}
-      name: meta.group.assertion.regexp
+        '1': {name: punctuation.definition.group.regexp.coffee}
+      name: meta.group.assertion.regexp.coffee
       patterns:
       - {include: '#regexp_inner'}
     - begin: (\()(\?\(([1-9][0-9]?|[a-zA-Z_][a-zA-Z_0-9]*)\))
       beginCaptures:
-        '1': {name: punctuation.definition.group.regexp}
-        '2': {name: punctuation.definition.group.assertion.conditional.regexp}
-        '3': {name: entity.name.section.back-reference.regexp}
+        '1': {name: punctuation.definition.group.regexp.coffee}
+        '2': {name: punctuation.definition.group.assertion.conditional.regexp.coffee}
+        '3': {name: entity.name.section.back-reference.regexp.coffee}
       end: (\))
-      name: meta.group.assertion.conditional.regexp
+      name: meta.group.assertion.conditional.regexp.coffee
       patterns:
       - {include: '#regexp_inner'}
     - begin: (\()((\?P<)([a-z]\w*)(>)|(\?:))?
       beginCaptures:
-        '1': {name: punctuation.definition.group.regexp}
-        '3': {name: punctuation.definition.group.capture.regexp}
-        '4': {name: entity.name.section.group.regexp}
-        '5': {name: punctuation.definition.group.capture.regexp}
-        '6': {name: punctuation.definition.group.no-capture.regexp}
+        '1': {name: punctuation.definition.group.regexp.coffee}
+        '3': {name: punctuation.definition.group.capture.regexp.coffee}
+        '4': {name: entity.name.section.group.regexp.coffee}
+        '5': {name: punctuation.definition.group.capture.regexp.coffee}
+        '6': {name: punctuation.definition.group.no-capture.regexp.coffee}
       end: (\))
       endCaptures:
-        '1': {name: punctuation.definition.group.regexp}
-      name: meta.group.regexp
+        '1': {name: punctuation.definition.group.regexp.coffee}
+      name: meta.group.regexp.coffee
       patterns:
       - {include: '#regexp_inner'}
     - {include: '#regexp_character_class'}
 
   regexp_character_class:
     patterns:
-    - {match: '\\[wWsSdDhH]|\.', name: constant.character.regexp_character_class.regexp}
-    - {match: \\., name: constant.character.escape.backslash.regexp}
+    - {match: '\\[wWsSdDhH]|\.', name: constant.character.regexp_character_class.regexp.coffee}
+    - {match: \\., name: constant.character.escape.backslash.regexp.coffee}
     - begin: (\[)(\^)?
       beginCaptures:
-        '1': {name: punctuation.definition.regexp_character_class.regexp}
-        '2': {name: keyword.operator.negation.regexp}
+        '1': {name: punctuation.definition.regexp_character_class.regexp.coffee}
+        '2': {name: keyword.operator.negation.regexp.coffee}
       end: (\])
       endCaptures:
-        '1': {name: punctuation.definition.regexp_character_class.regexp}
-      name: constant.other.regexp_character_class.set.regexp
+        '1': {name: punctuation.definition.regexp_character_class.regexp.coffee}
+      name: constant.other.regexp_character_class.set.regexp.coffee
       patterns:
       - {include: '#regexp_character_class'}
       - captures:
-          '2': {name: constant.character.escape.backslash.regexp}
-          '4': {name: constant.character.escape.backslash.regexp}
+          '2': {name: constant.character.escape.backslash.regexp.coffee}
+          '4': {name: constant.character.escape.backslash.regexp.coffee}
         match: ((\\.)|.)\-((\\.)|[^\]])
-        name: constant.other.regexp_character_class.range.regexp
+        name: constant.other.regexp_character_class.range.regexp.coffee
 firstLineMatch: ^#!.*\bcoffee
 foldingStartMarker: ^\s*class\s+\S.*$|.*(->|=>)\s*$|.*[\[{]\s*$
 foldingStopMarker: ^\s*$|^\s*[}\]]\s*$

@@ -455,7 +455,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?x)\s*([a-zA-Z\$_@][\.\w\$]*)\s*([:=])\s*(\()(?=[^()]*(?&lt;re&gt;\((?:(?&gt;[^()]+)|\g&lt;re&gt;)*\))?[^()]*\)\s*[=-]&gt;)</string>
+					<string>(?xm)\s*([a-zA-Z\$_@][\.\w\$]*)\s*([:=])\s*(\()(?=[^()]*(?&lt;re&gt;\((?:(?&gt;[^()]+)|\g&lt;re&gt;)*\))?[^()]*\)\s*[=-]&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -519,13 +519,13 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?x)\s*([a-zA-Z\$_@][\.\w\$]*)\s*([:=])\s*([=-]&gt;)</string>
+					<string>(?xm)\s*([a-zA-Z\$_@][\.\w\$]*)\s*([:=])\s*([=-]&gt;)</string>
 					<key>name</key>
 					<string>meta.function.coffee</string>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?x)\s*(\()(?=[^()]*(?&lt;re&gt;\((?:(?&gt;[^()]+)|\g&lt;re&gt;)*\))?[^()]*\)\s*[=-]&gt;)</string>
+					<string>(?xm)\s*(\()(?=[^()]*(?&lt;re&gt;\((?:(?&gt;[^()]+)|\g&lt;re&gt;)*\))?[^()]*\)\s*[=-]&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>

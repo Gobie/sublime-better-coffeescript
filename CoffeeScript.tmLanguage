@@ -429,33 +429,27 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>((?&lt;=console\.)(assert|clear|count|debug|dir|dirxml|error|group|groupCollapsed|groupEnd|info|log|profile|profileEnd|time|timeEnd|timeline|timelineEnd|timeStampt|trace|warn))\b</string>
-			<key>name</key>
-			<string>support.function.console.coffee</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>((?&lt;=JSON\.)(parse|stringify))\b</string>
-			<key>name</key>
-			<string>support.function.JSON.coffee</string>
-		</dict>
-		<dict>
-			<key>match</key>
 			<string>(?x)\b(decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|(set|clear)Timeout)\b</string>
 			<key>name</key>
 			<string>support.function.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)((?&lt;=\.)(preventDefault|stopPropagation|stopImmediatePropagation))\b</string>
+			<string>(?x)((?&lt;=\.)(preventDefault|stopPropagation|stopImmediatePropagation)(?=\())\b</string>
 			<key>name</key>
 			<string>support.function.method.event.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x)((?&lt;=\.)(apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce(Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|unshift|valueOf))\b(?![.?])</string>
+			<string>(?x)((?&lt;=\.)(apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce( Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|unshift|valueOf))\b(?![.?\n])</string>
 			<key>name</key>
 			<string>support.function.method.array.coffee</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>((?&lt;=console\.)(assert|clear|count|debug|dir|dirxml|error|group|groupCollapsed|groupEnd|info|log|profile|profileEnd|time|timeEnd|timeline|timelineEnd|timeStampt|trace|warn))\b</string>
+			<key>name</key>
+			<string>support.function.console.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -480,6 +474,12 @@
 			<string>(?x)((?&lt;=Number\.)(is(Finite|Integer|NaN)|toInteger))\b</string>
 			<key>name</key>
 			<string>support.function.static.number.coffee</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?x)((?&lt;=JSON\.)(parse|stringify))\b</string>
+			<key>name</key>
+			<string>support.function.static.json.coffee</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -535,10 +535,6 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#google_closure_library</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#an_library</string>
 		</dict>
 		<dict>
@@ -548,6 +544,10 @@
 		<dict>
 			<key>include</key>
 			<string>#este_library</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#google_closure_library</string>
 		</dict>
 		<dict>
 			<key>include</key>

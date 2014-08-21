@@ -84,7 +84,9 @@ patterns:
 
 - name: keyword.control.coffee
   match: (?x)\b(?<![\.\$])(break|by|catch|continue|else|finally|for|in|of|if|return|switch|then|throw|try|unless|when|while|until|loop|do|(?<=for)\s+own)(?!\s*:)\b
+
 - include: '#keyword_operator'
+
 - name: meta.variable.assignment.destructured.coffee
   begin: (?<=\s|^)([\[\{])(?=.*?[\]\}]\s+[:=])
   beginCaptures:
@@ -138,26 +140,34 @@ patterns:
   match: \b(debugger|\\)\b
 
 - include: '#native_class'
-- name: support.function.console.coffee
-  match: ((?<=console\.)(assert|clear|count|debug|dir|dirxml|error|group|groupCollapsed|groupEnd|info|log|profile|profileEnd|time|timeEnd|timeline|timelineEnd|timeStampt|trace|warn))\b
-
-- name: support.function.JSON.coffee
-  match: ((?<=JSON\.)(parse|stringify))\b
 
 - name: support.function.coffee
   match: (?x)\b(decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|(set|clear)Timeout)\b
+
 - name: support.function.method.event.coffee
-  match: (?x)((?<=\.)(preventDefault|stopPropagation|stopImmediatePropagation))\b
+  match: (?x)((?<=\.)(preventDefault|stopPropagation|stopImmediatePropagation)(?=\())\b
+
 - name: support.function.method.array.coffee
-  match: (?x)((?<=\.)(apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce(Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|unshift|valueOf))\b(?![.?])
+  match: (?x)((?<=\.)(apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce(
+    Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|unshift|valueOf))\b(?![.?\n])
+
+- name: support.function.console.coffee
+  match: ((?<=console\.)(assert|clear|count|debug|dir|dirxml|error|group|groupCollapsed|groupEnd|info|log|profile|profileEnd|time|timeEnd|timeline|timelineEnd|timeStampt|trace|warn))\b
+
 - name: support.function.static.array.coffee
   match: (?x)((?<=Array\.)(isArray))\b
+
 - name: support.function.static.object.coffee
   match: (?x)((?<=Object\.)(create|definePropert(ies|y)|freeze|getOwnProperty(Descriptors?|Names)|getProperty(Descriptor|Names)|getPrototypeOf|is(Extensible|Frozen|Sealed)?|isnt|keys|preventExtensions|seal))\b
+
 - name: support.function.static.math.coffee
   match: (?x)((?<=Math\.)(abs|acos|acosh|asin|asinh|atan|atan2|atanh|ceil|cos|cosh|exp|expm1|floor|hypot|log|log10|log1p|log2|max|min|pow|random|round|sign|sin|sinh|sqrt|tan|tanh|trunc))\b
+
 - name: support.function.static.number.coffee
   match: (?x)((?<=Number\.)(is(Finite|Integer|NaN)|toInteger))\b
+
+- name: support.function.static.json.coffee
+  match: (?x)((?<=JSON\.)(parse|stringify))\b
 
 - name: punctuation.terminator.statement.coffee
   match: \;
@@ -178,23 +188,16 @@ patterns:
   match: \[|\]\s*
 
 - include: '#class_usage'
-
 - include: '#static_variable'
-
 - include: '#instance_variable'
-
 - include: '#instance_method'
 
+- include: '#an_library'
+- include: '#builder_library'
+- include: '#este_library'
 - include: '#google_closure_library'
 
-- include: '#an_library'
-
-- include: '#builder_library'
-
-- include: '#este_library'
-
 - include: '#single_quoted_string'
-
 - include: '#double_quoted_string'
 
 - include: '#numeric'

@@ -405,7 +405,7 @@ repository:
 
   regexp:
     patterns:
-    - begin: (/)(?=[^\n]*/)
+    - begin: (?<=[\s\[\,=(:]|^|return|&&|\|\||!)\s*(/)(?!\s|[/*+{}?]|[^/\n]*$)
       beginCaptures:
         '1': {name: punctuation.definition.regexp.start.coffee}
       end: (/)([imgy]{0,4})

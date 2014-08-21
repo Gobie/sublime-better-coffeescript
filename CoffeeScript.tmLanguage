@@ -1036,7 +1036,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(/)(?=[^\n]*/)</string>
+					<string>(?&lt;=[\s\[\,=(:]|^|return|&amp;&amp;|\|\||!)\s*(/)(?!\s|[/*+{}?]|[^/\n]*$)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>

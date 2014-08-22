@@ -560,6 +560,20 @@
 					</array>
 				</dict>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.object_key.name.coffee</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(@?[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*:(?!:))</string>
+					<key>name</key>
+					<string>meta.variable.assignment.object.coffee</string>
+				</dict>
+				<dict>
 					<key>begin</key>
 					<string>^\s*(describe|it|app\.(get|post|put|all|del|delete))[^\w]</string>
 					<key>comment</key>
@@ -776,6 +790,10 @@
 				<dict>
 					<key>include</key>
 					<string>#numeric</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variable_name</string>
 				</dict>
 			</array>
 		</dict>
@@ -1405,18 +1423,10 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.assignment.coffee</string>
-						</dict>
-					</dict>
 					<key>match</key>
 					<string>([a-zA-Z\$_]\w*(\.\w+)*)</string>
 					<key>name</key>
-					<string>variable.assignment.coffee</string>
+					<string>variable.other.name.coffee</string>
 				</dict>
 			</array>
 		</dict>

@@ -133,6 +133,11 @@ repository:
       patterns:
       - include: '#coffeescript'
 
+    - name: meta.variable.assignment.object.coffee
+      match: (@?[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*:(?!:))
+      captures:
+        '1': {name: variable.other.object_key.name.coffee}
+
     - comment: Show well-known functions from Express and Mocha in Go To Symbol view
       name: meta.function.symbols.coffee
       begin: ^\s*(describe|it|app\.(get|post|put|all|del|delete))[^\w]
@@ -224,6 +229,7 @@ repository:
     - include: '#double_quoted_string'
 
     - include: '#numeric'
+    - include: '#variable_name'
 
   an_library:
     patterns:
@@ -327,10 +333,8 @@ repository:
 
   variable_name:
     patterns:
-    - name: variable.assignment.coffee
+    - name: variable.other.name.coffee
       match: ([a-zA-Z\$_]\w*(\.\w+)*)
-      captures:
-        '1': {name: variable.assignment.coffee}
 
   whitespace:
     patterns:

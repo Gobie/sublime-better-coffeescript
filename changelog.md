@@ -42,6 +42,7 @@
   - whitespace
   - regexp inner
   - regexp character class
+  - variable assignment (object key)
 
 # Remove
 - global functions

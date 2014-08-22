@@ -224,6 +224,7 @@ repository:
     - include: '#builder_library'
     - include: '#este_library'
     - include: '#google_closure_library'
+    - include: '#highcharts_library'
 
     - include: '#single_quoted_string'
     - include: '#double_quoted_string'
@@ -233,23 +234,28 @@ repository:
 
   an_library:
     patterns:
-    - name: variable.other.an.coffee
+    - name: support.other.variable.user.an.coffee
       match: an(\.\w+)+
 
   builder_library:
     patterns:
-    - name: variable.other.builder.coffee
+    - name: support.other.variable.user.builder.coffee
       match: builder(\.\w+)+
 
   este_library:
     patterns:
-    - name: variable.other.este.coffee
+    - name: support.other.variable.vendor.este.coffee
       match: este(\.\w+)+
 
   google_closure_library:
     patterns:
-    - name: variable.other.goog.coffee
+    - name: support.other.variable.vendor.goog.coffee
       match: goog(\.\w+)+
+
+  highcharts_library:
+    patterns:
+    - name: support.other.variable.vendor.highcharts.coffee
+      match: Highcharts(\.\w+)+
 
   class_usage:
     patterns:
@@ -359,6 +365,7 @@ repository:
       - include: '#builder_library'
       - include: '#este_library'
       - include: '#google_closure_library'
+      - include: '#highcharts_library'
       - include: '#constant_true'
       - include: '#constant_false'
       - include: '#constant_null'

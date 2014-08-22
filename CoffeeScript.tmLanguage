@@ -39,7 +39,7 @@
 					<key>match</key>
 					<string>an(\.\w+)+</string>
 					<key>name</key>
-					<string>variable.other.an.coffee</string>
+					<string>support.other.variable.user.an.coffee</string>
 				</dict>
 			</array>
 		</dict>
@@ -112,6 +112,10 @@
 						</dict>
 						<dict>
 							<key>include</key>
+							<string>#highcharts_library</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#constant_true</string>
 						</dict>
 						<dict>
@@ -156,7 +160,7 @@
 					<key>match</key>
 					<string>builder(\.\w+)+</string>
 					<key>name</key>
-					<string>variable.other.builder.coffee</string>
+					<string>support.other.variable.user.builder.coffee</string>
 				</dict>
 			</array>
 		</dict>
@@ -781,6 +785,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#highcharts_library</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#single_quoted_string</string>
 				</dict>
 				<dict>
@@ -920,7 +928,7 @@
 					<key>match</key>
 					<string>este(\.\w+)+</string>
 					<key>name</key>
-					<string>variable.other.este.coffee</string>
+					<string>support.other.variable.vendor.este.coffee</string>
 				</dict>
 			</array>
 		</dict>
@@ -932,7 +940,19 @@
 					<key>match</key>
 					<string>goog(\.\w+)+</string>
 					<key>name</key>
-					<string>variable.other.goog.coffee</string>
+					<string>support.other.variable.vendor.goog.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>highcharts_library</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>Highcharts(\.\w+)+</string>
+					<key>name</key>
+					<string>support.other.variable.vendor.highcharts.coffee</string>
 				</dict>
 			</array>
 		</dict>

@@ -31,6 +31,7 @@
   - este
   - builder
   - goog
+  - highcharts
 - scope names
   - annotation type
   - annotation definition

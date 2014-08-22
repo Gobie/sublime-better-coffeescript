@@ -97,7 +97,6 @@ repository:
       patterns:
       - include: '#variable_name'
       - include: '#instance_variable'
-      - include: '#static_variable'
       - include: '#single_quoted_string'
       - include: '#double_quoted_string'
       - include: '#numeric'
@@ -216,7 +215,6 @@ repository:
       match: \[|\]\s*
 
     - include: '#class_usage'
-    - include: '#static_variable'
     - include: '#instance_variable'
     - include: '#instance_method'
 
@@ -329,13 +327,6 @@ repository:
       - name: constant.character.escape.coffee
         match: \\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)
       - include: 'text.html.basic'
-
-  static_variable:
-    patterns:
-    - name: variable.other.readwrite.static.usage.coffee
-      match: (?x)(?<=\.)[A-Z_]+\b(?!\s*[.:=])
-    - name: variable.other.readwrite.static.definition.coffee
-      match: (?x)((?<!\w)|@)[A-Z_]+(?=\s*[:=])
 
   variable_name:
     patterns:

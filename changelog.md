@@ -39,7 +39,6 @@
   - class custom
   - class native
   - instance method
-  - static variable
   - whitespace
   - regexp inner
   - regexp character class

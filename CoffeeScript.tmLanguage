@@ -441,10 +441,6 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#static_variable</string>
-						</dict>
-						<dict>
-							<key>include</key>
 							<string>#single_quoted_string</string>
 						</dict>
 						<dict>
@@ -754,10 +750,6 @@
 				<dict>
 					<key>include</key>
 					<string>#class_usage</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#static_variable</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1417,24 +1409,6 @@
 							<string>text.html.basic</string>
 						</dict>
 					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>static_variable</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(?x)(?&lt;=\.)[A-Z_]+\b(?!\s*[.:=])</string>
-					<key>name</key>
-					<string>variable.other.readwrite.static.usage.coffee</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?x)((?&lt;!\w)|@)[A-Z_]+(?=\s*[:=])</string>
-					<key>name</key>
-					<string>variable.other.readwrite.static.definition.coffee</string>
 				</dict>
 			</array>
 		</dict>

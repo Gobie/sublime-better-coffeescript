@@ -172,7 +172,7 @@ repository:
       match: (?x)\b(decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|(set|clear)Timeout)\b
 
     - name: support.function.method.event.coffee
-      match: (?x)((?<=\.)(preventDefault|stopPropagation|stopImmediatePropagation)(?=\())\b
+      match: (?x)((?<=\.)(preventDefault|stopPropagation|stopImmediatePropagation))\b(?=\()
 
     - name: support.function.method.array.coffee
       match: (?x)((?<=\.)(apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce(
@@ -228,7 +228,6 @@ repository:
     - include: '#double_quoted_string'
 
     - include: '#numeric'
-    - include: '#variable_name'
 
   an_library:
     patterns:
@@ -331,7 +330,7 @@ repository:
   variable_name:
     patterns:
     - name: variable.other.name.coffee
-      match: ([a-zA-Z\$_]\w*(\.\w+)*)
+      match: ([a-zA-Z\$_]\w*(\.\w+)*)(?!\()
 
   whitespace:
     patterns:

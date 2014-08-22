@@ -665,7 +665,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?x)((?&lt;=\.)(preventDefault|stopPropagation|stopImmediatePropagation)(?=\())\b</string>
+					<string>(?x)((?&lt;=\.)(preventDefault|stopPropagation|stopImmediatePropagation))\b(?=\()</string>
 					<key>name</key>
 					<string>support.function.method.event.coffee</string>
 				</dict>
@@ -790,10 +790,6 @@
 				<dict>
 					<key>include</key>
 					<string>#numeric</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#variable_name</string>
 				</dict>
 			</array>
 		</dict>
@@ -1418,7 +1414,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>([a-zA-Z\$_]\w*(\.\w+)*)</string>
+					<string>([a-zA-Z\$_]\w*(\.\w+)*)(?!\()</string>
 					<key>name</key>
 					<string>variable.other.name.coffee</string>
 				</dict>

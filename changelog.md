@@ -2,7 +2,6 @@
 - Clean up scope names
 - Fix many highlighting issues
 - Created YAML source tmLanguage and tmPreference
-- Strings are considered as HTML
 
 # Add
 - functions/classes/keywords
@@ -58,4 +57,4 @@
   - instance variable
   - regexp
   - class
-  - function definition
+  - function definitions

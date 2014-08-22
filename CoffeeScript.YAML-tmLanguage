@@ -164,7 +164,7 @@ repository:
         '4': {name: entity.other.inherited-class.coffee}
 
     - name: keyword.other.coffee
-      match: \b(debugger|\\)\b
+      match: \b(debugger|arguments|\\)\b
 
     - include: '#native_class'
 

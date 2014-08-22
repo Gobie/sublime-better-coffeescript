@@ -5,7 +5,7 @@
 - Strings are considered as HTML
 
 # Add
-- support functions
+- functions/classes/keywords
   - console.clear
   - console.count
   - console.dir
@@ -26,6 +26,7 @@
   - event.stopImmediatePropagation
   - setTimeout
   - clearTimeout
+  - arguments
 - library namespaces
   - an
   - este

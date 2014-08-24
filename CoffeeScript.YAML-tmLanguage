@@ -135,6 +135,11 @@ repository:
       captures:
         '1': {name: variable.other.object_key.name.coffee}
 
+    - name: meta.variable.assignment.object.coffee
+      match: ((?<=\.)[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*=(?![=]))
+      captures:
+        '1': {name: variable.other.object_key.name.coffee}
+
     - comment: Show well-known functions from Express and Mocha in Go To Symbol view
       name: meta.function.symbols.coffee
       begin: ^\s*(describe|it|app\.(get|post|put|all|del|delete))[^\w]

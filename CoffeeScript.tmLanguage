@@ -364,8 +364,29 @@
 				<dict>
 					<key>begin</key>
 					<string>/{3}</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.regexp.start.coffee</string>
+						</dict>
+					</dict>
 					<key>end</key>
-					<string>/{3}[imgy]{0,4}</string>
+					<string>(/{3})([imgy]{0,4})</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.regexp.end.coffee</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.option-toggle.regexp.coffee</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>string.regexp.coffee</string>
 					<key>patterns</key>
@@ -1064,7 +1085,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?&lt;=[\s\[\,=(:]|^|return|&amp;&amp;|\|\||!)\s*(/)(?!\s|[/*+{}?]|[^/\n]*$)</string>
+					<string>/(?![\s=/*+{}?])(?=.*?([^\\\n]|\\\\)/[igmy]{0,4}(?![a-zA-Z0-9]))</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>

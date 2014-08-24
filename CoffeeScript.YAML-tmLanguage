@@ -72,7 +72,12 @@ repository:
 
     - name: string.regexp.coffee
       begin: /{3}
-      end: /{3}[imgy]{0,4}
+      beginCaptures:
+        '1': {name: punctuation.definition.regexp.start.coffee}
+      end: (/{3})([imgy]{0,4})
+      endCaptures:
+        '1': {name: punctuation.definition.regexp.end.coffee}
+        '2': {name: keyword.other.option-toggle.regexp.coffee}
       patterns:
       - include: '#interpolated_coffee'
       - include: '#embedded_comment'
@@ -407,7 +412,7 @@ repository:
 
   regexp:
     patterns:
-    - begin: (?<=[\s\[\,=(:]|^|return|&&|\|\||!)\s*(/)(?!\s|[/*+{}?]|[^/\n]*$)
+    - begin: /(?![\s=/*+{}?])(?=.*?([^\\\n]|\\\\)/[igmy]{0,4}(?![a-zA-Z0-9]))
       beginCaptures:
         '1': {name: punctuation.definition.regexp.start.coffee}
       end: (/)([imgy]{0,4})

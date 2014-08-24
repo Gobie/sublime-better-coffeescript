@@ -37,7 +37,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>an(\.\w+)+</string>
+					<string>(?&lt;!\w)an(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.user.an.coffee</string>
 				</dict>
@@ -158,7 +158,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>builder(\.\w+)+</string>
+					<string>(?&lt;!\w)builder(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.user.builder.coffee</string>
 				</dict>
@@ -916,7 +916,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>este(\.\w+)+</string>
+					<string>(?&lt;!\w)este(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.vendor.este.coffee</string>
 				</dict>
@@ -928,7 +928,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>goog(\.\w+)+</string>
+					<string>(?&lt;!\w)goog(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.vendor.goog.coffee</string>
 				</dict>
@@ -940,7 +940,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>Highcharts(\.\w+)+</string>
+					<string>(?&lt;!\w)Highcharts(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.vendor.highcharts.coffee</string>
 				</dict>

@@ -235,27 +235,27 @@ repository:
   an_library:
     patterns:
     - name: support.other.variable.user.an.coffee
-      match: an(\.\w+)+
+      match: (?<!\w)an(\.\w+)+
 
   builder_library:
     patterns:
     - name: support.other.variable.user.builder.coffee
-      match: builder(\.\w+)+
+      match: (?<!\w)builder(\.\w+)+
 
   este_library:
     patterns:
     - name: support.other.variable.vendor.este.coffee
-      match: este(\.\w+)+
+      match: (?<!\w)este(\.\w+)+
 
   google_closure_library:
     patterns:
     - name: support.other.variable.vendor.goog.coffee
-      match: goog(\.\w+)+
+      match: (?<!\w)goog(\.\w+)+
 
   highcharts_library:
     patterns:
     - name: support.other.variable.vendor.highcharts.coffee
-      match: Highcharts(\.\w+)+
+      match: (?<!\w)Highcharts(\.\w+)+
 
   class_usage:
     patterns:

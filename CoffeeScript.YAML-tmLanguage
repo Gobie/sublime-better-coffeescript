@@ -296,7 +296,7 @@ repository:
   instance_variable:
     patterns:
     - name: variable.other.readwrite.instance.coffee
-      match: (?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|if|instanceof|in|is|isnt|not|or|then|unless|when)\b|\s*(==|=(?!>)|\?=|[#,]))))
+      match: (?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|if|instanceof|in|is|isnt|not|or|then|unless|when)\b|\s*(==|=(?!>)|\?=|[#,}]))))
 
   interpolated_coffee:
     patterns:

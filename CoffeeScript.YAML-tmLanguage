@@ -98,11 +98,12 @@ repository:
       endCaptures:
         '0': {name: keyword.operator.coffee}
       patterns:
-      - include: '#variable_name'
+      - include: '#object_key'
       - include: '#instance_variable'
       - include: '#single_quoted_string'
       - include: '#double_quoted_string'
       - include: '#numeric'
+      - include: '#variable_name'
 
     - name: meta.function.coffee
       begin: (?xm)\s*([a-zA-Z\$_@][\.\w\$]*)\s*([:=])\s*(\()(?=[^()]*(?<re>\((?:(?>[^()]+)|\g<re>)*\))?[^()]*\)\s*[=-]>)
@@ -135,15 +136,7 @@ repository:
       patterns:
       - include: '#coffeescript'
 
-    - name: meta.variable.assignment.object.coffee
-      match: (@?[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*:(?!:))
-      captures:
-        '1': {name: variable.other.object_key.name.coffee}
-
-    - name: meta.variable.assignment.object.coffee
-      match: ((?<=\.)[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*=(?![=]))
-      captures:
-        '1': {name: variable.other.object_key.name.coffee}
+    - include: '#object_key'
 
     - comment: Show well-known functions from Express and Mocha in Go To Symbol view
       name: meta.function.symbols.coffee
@@ -389,6 +382,18 @@ repository:
     patterns:
     - name: keyword.operator.coffee
       match: (?x)and=|or=|!|%|&|\^|\*|\/|(\-)?\-(?!>)|\+\+|\+|~|==|=(?!>)|!=|<=|>=|<<=|>>=|>>>=|<>|<|>|!|&&|\.\.(\.)?|\?|\||\|\||\:|\*=|(?<!\()/=|%=|\+=|\-=|&=|\^=|\b(?<![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)(?![:])\b
+
+  object_key:
+    patterns:
+    - name: meta.variable.assignment.object.coffee
+      match: (@?[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*:(?!:))
+      captures:
+        '1': {name: variable.other.object_key.name.coffee}
+
+    - name: meta.variable.assignment.object.coffee
+      match: ((?<=\.)[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*=(?![=]))
+      captures:
+        '1': {name: variable.other.object_key.name.coffee}
 
   constant_true:
     patterns:

@@ -446,7 +446,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#variable_name</string>
+							<string>#object_key</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -463,6 +463,10 @@
 						<dict>
 							<key>include</key>
 							<string>#numeric</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#variable_name</string>
 						</dict>
 					</array>
 				</dict>
@@ -573,32 +577,8 @@
 					</array>
 				</dict>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.object_key.name.coffee</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(@?[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*:(?!:))</string>
-					<key>name</key>
-					<string>meta.variable.assignment.object.coffee</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.object_key.name.coffee</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>((?&lt;=\.)[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*=(?![=]))</string>
-					<key>name</key>
-					<string>meta.variable.assignment.object.coffee</string>
+					<key>include</key>
+					<string>#object_key</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1076,6 +1056,40 @@
 					<string>(?&lt;!\$)\b((0([box])[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?(e[+\-]?[0-9]+)?))\b</string>
 					<key>name</key>
 					<string>constant.numeric.coffee</string>
+				</dict>
+			</array>
+		</dict>
+		<key>object_key</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.object_key.name.coffee</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(@?[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*:(?!:))</string>
+					<key>name</key>
+					<string>meta.variable.assignment.object.coffee</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.object_key.name.coffee</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>((?&lt;=\.)[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*=(?![=]))</string>
+					<key>name</key>
+					<string>meta.variable.assignment.object.coffee</string>
 				</dict>
 			</array>
 		</dict>

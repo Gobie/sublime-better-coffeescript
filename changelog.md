@@ -43,6 +43,7 @@
   - regexp inner
   - regexp character class
   - variable assignment (object key)
+  - string template specifiers
 
 # Remove
 - global functions

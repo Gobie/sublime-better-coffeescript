@@ -27,6 +27,7 @@ repository:
         '0': {name: punctuation.definition.string.end.coffee}
       patterns:
       - include: '#whitespace'
+      - include: '#string_template_specifiers'
 
     - name: string.quoted.triple.double.coffee
       begin: '"""'
@@ -40,6 +41,7 @@ repository:
         match: \\.
       - include: '#whitespace'
       - include: '#interpolated_coffee'
+      - include: '#string_template_specifiers'
 
     - name: string.quoted.other.script.coffee
       begin: '`'
@@ -255,24 +257,15 @@ repository:
     - name: support.other.variable.vendor.highcharts.coffee
       match: (?<!\w)Highcharts(\.\w+)+
 
+  numeric:
+    patterns:
+    - name: constant.numeric.coffee
+      match: (?<!\$)\b((0([box])[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?(e[+\-]?[0-9]+)?))\b
+
   class_usage:
     patterns:
     - name: entity.name.type.class.usage.coffee
       match: (?x)(?<!\.)\b[A-Z]\w*(?=(\.\w+)+)
-
-  double_quoted_string:
-    patterns:
-    - name: string.quoted.double.coffee
-      begin: '"'
-      beginCaptures:
-        '0': {name: punctuation.definition.string.begin.coffee}
-      end: '"'
-      endCaptures:
-        '0': {name: punctuation.definition.string.end.coffee}
-      patterns:
-      - name: constant.character.escape.coffee
-        match: \\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)
-      - include: '#interpolated_coffee'
 
   embedded_comment:
     patterns:
@@ -308,10 +301,10 @@ repository:
       patterns:
       - include: $self
 
-  numeric:
+  string_template_specifiers:
     patterns:
-    - name: constant.numeric.coffee
-      match: (?<!\$)\b((0([box])[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?(e[+\-]?[0-9]+)?))\b
+    - name: variable.other.template.specifiers.coffee
+      match: (?x)%([0\-\+]*)(\d+)?(\.(\d+))?([%sfdiu])
 
   single_quoted_string:
     patterns:
@@ -325,6 +318,22 @@ repository:
       patterns:
       - name: constant.character.escape.coffee
         match: \\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)
+      - include: '#string_template_specifiers'
+
+  double_quoted_string:
+    patterns:
+    - name: string.quoted.double.coffee
+      begin: '"'
+      beginCaptures:
+        '0': {name: punctuation.definition.string.begin.coffee}
+      end: '"'
+      endCaptures:
+        '0': {name: punctuation.definition.string.end.coffee}
+      patterns:
+      - name: constant.character.escape.coffee
+        match: \\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)
+      - include: '#interpolated_coffee'
+      - include: '#string_template_specifiers'
 
   variable_name:
     patterns:

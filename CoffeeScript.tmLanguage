@@ -965,7 +965,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\s+|[?(])</string>
+					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??(\s+|[(]))</string>
 					<key>name</key>
 					<string>variable.other.method.instance.coffee</string>
 				</dict>
@@ -977,7 +977,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|if|instanceof|in|is|isnt|not|or|then|unless|when)\b|\s*(==|=(?!&gt;)|\?=|[#,}]))))</string>
+					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|for|if|instanceof|in|is|isnt|not(?=\s+in\s+)|or|then|unless|when)\b)|\s*(\?=|==|=(?!&gt;)|[+*/&lt;&gt;#,}-])))</string>
 					<key>name</key>
 					<string>variable.other.readwrite.instance.coffee</string>
 				</dict>
@@ -1085,7 +1085,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(@?[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*:(?!:))</string>
+					<string>(@?[a-zA-Z\$_]\w*)(?=\s*:(?!:))</string>
 					<key>name</key>
 					<string>meta.variable.assignment.object.coffee</string>
 				</dict>
@@ -1099,7 +1099,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>((?&lt;=\.)[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*=(?![=]))</string>
+					<string>((?&lt;=\.)[a-zA-Z\$_]\w*)(?=\s*=(?![=&gt;]))</string>
 					<key>name</key>
 					<string>meta.variable.assignment.object.coffee</string>
 				</dict>
@@ -1463,7 +1463,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)%([0\-\ \+]*)(\d+)?(\.(\d+))?([%sfdiu])</string>
+					<string>(?x)%([0\-\+]*)(\d+)?(\.(\d+))?([%sfdiu])</string>
 					<key>name</key>
 					<string>variable.other.template.specifiers.coffee</string>
 				</dict>

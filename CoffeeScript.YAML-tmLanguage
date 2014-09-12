@@ -277,12 +277,12 @@ repository:
   instance_method:
     patterns:
     - name: variable.other.method.instance.coffee
-      match: (?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\s+|[?(])
+      match: (?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??(\s+|[(]))
 
   instance_variable:
     patterns:
     - name: variable.other.readwrite.instance.coffee
-      match: (?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|if|instanceof|in|is|isnt|not|or|then|unless|when)\b|\s*(==|=(?!>)|\?=|[#,}]))))
+      match: (?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|for|if|instanceof|in|is|isnt|not(?=\s+in\s+)|or|then|unless|when)\b)|\s*(\?=|==|=(?!>)|[+*/<>#,}-])))
 
   interpolated_coffee:
     patterns:
@@ -395,12 +395,12 @@ repository:
   object_key:
     patterns:
     - name: meta.variable.assignment.object.coffee
-      match: (@?[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*:(?!:))
+      match: (@?[a-zA-Z\$_]\w*)(?=\s*:(?!:))
       captures:
         '1': {name: variable.other.object_key.name.coffee}
 
     - name: meta.variable.assignment.object.coffee
-      match: ((?<=\.)[a-zA-Z\$_]\w*(?:\.\w+)*)(?=\s*=(?![=]))
+      match: ((?<=\.)[a-zA-Z\$_]\w*)(?=\s*=(?![=>]))
       captures:
         '1': {name: variable.other.object_key.name.coffee}
 

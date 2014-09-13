@@ -88,7 +88,7 @@ repository:
     - include: '#regexp'
 
     - name: keyword.control.coffee
-      match: (?x)\b(?<![\.\$])(break|by|catch|continue|else|finally|for|in|of|if|return|switch|then|throw|try|unless|when|while|until|loop|do|(?<=for)\s+own)(?!\s*:)\b
+      match: (?x)\b(?<![\.\$])(break|by|catch|continue|else|finally|for|in|of|if|return|switch|then|throw|try|unless|when|while|until|loop|do|(?<=for\s)own)(?!\s*:)\b
 
     - include: '#keyword_operator'
 

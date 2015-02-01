@@ -977,7 +977,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|for|if|instanceof|in|is|isnt|not(?=\s+in\s)|or|then|unless|when)\b)|\s+(\?\s)|\s*(\?=|==|=(?!&gt;)|[+*/&lt;&gt;#,}-])))</string>
+					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|for|if|instanceof|in|is|isnt|not(?=\s+in\s)|or|then|unless|when)\b)|(\s+\?\s)|\s*(\?=|==|=(?!&gt;)|[+*/&lt;&gt;#,}-])))</string>
 					<key>name</key>
 					<string>variable.other.readwrite.instance.coffee</string>
 				</dict>

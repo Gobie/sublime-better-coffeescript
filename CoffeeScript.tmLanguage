@@ -104,6 +104,10 @@
 						</dict>
 						<dict>
 							<key>include</key>
+							<string>#sbks_library</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#este_library</string>
 						</dict>
 						<dict>
@@ -784,6 +788,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#sbks_library</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#este_library</string>
 				</dict>
 				<dict>
@@ -1411,6 +1419,18 @@
 				<dict>
 					<key>include</key>
 					<string>#regexp_character_class</string>
+				</dict>
+			</array>
+		</dict>
+		<key>sbks_library</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;!\w)sbks(\.\w+)+</string>
+					<key>name</key>
+					<string>support.other.variable.user.sbks.coffee</string>
 				</dict>
 			</array>
 		</dict>

@@ -223,6 +223,7 @@ repository:
 
     - include: '#an_library'
     - include: '#builder_library'
+    - include: '#sbks_library'
     - include: '#este_library'
     - include: '#google_closure_library'
     - include: '#highcharts_library'
@@ -241,6 +242,11 @@ repository:
     patterns:
     - name: support.other.variable.user.builder.coffee
       match: (?<!\w)builder(\.\w+)+
+
+  sbks_library:
+    patterns:
+    - name: support.other.variable.user.sbks.coffee
+      match: (?<!\w)sbks(\.\w+)+
 
   este_library:
     patterns:
@@ -361,6 +367,7 @@ repository:
       patterns:
       - include: '#an_library'
       - include: '#builder_library'
+      - include: '#sbks_library'
       - include: '#este_library'
       - include: '#google_closure_library'
       - include: '#highcharts_library'

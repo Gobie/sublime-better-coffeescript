@@ -66,11 +66,15 @@ repository:
       - name: storage.type.annotation.keyword.coffee
         match: '@\w*'
       - include: '#annotation_type'
+      - include: '#todo_comment_type'
 
     - name: comment.line.number-sign.coffee
-      match: (#)(?!\{).*$\n?
+      begin: (?<!#)#(?!{|##\s+)
+      end: $
       captures:
-        '1': {name: punctuation.definition.comment.coffee}
+        '0': {name: punctuation.definition.comment.coffee}
+      patterns:
+      - include: '#todo_comment_type'
 
     - name: string.regexp.coffee
       begin: /{3}
@@ -354,6 +358,11 @@ repository:
       match: '[\s\t]+$'
     - name: meta.whitespace
       match: '[\s\t]+'
+
+  todo_comment_type:
+    patterns:
+    - name: keyword.todo.coffee
+      match: (TODO|FIXME)
 
   annotation_type:
     patterns:

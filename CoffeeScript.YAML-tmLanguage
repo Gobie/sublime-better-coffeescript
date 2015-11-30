@@ -362,7 +362,7 @@ repository:
   todo_comment_type:
     patterns:
     - name: keyword.todo.coffee
-      match: (TODO|FIXME)
+      match: (TODO|FIXME)(\([^)]+\))?
 
   annotation_type:
     patterns:

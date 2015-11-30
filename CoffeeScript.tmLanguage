@@ -1508,7 +1508,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(TODO|FIXME)</string>
+					<string>(TODO|FIXME)(\([^)]+\))?</string>
 					<key>name</key>
 					<string>keyword.todo.coffee</string>
 				</dict>

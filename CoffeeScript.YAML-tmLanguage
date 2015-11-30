@@ -182,14 +182,14 @@ repository:
       match: (?x)((?<=\.)(preventDefault|stopPropagation|stopImmediatePropagation))\b(?=\()
 
     - name: support.function.method.array.coffee
-      match: (?x)((?<=\.)(apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce(
+      match: (?x)((?<=\.)(apply|call|concat|every|filter|forEach|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce(
         Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|unshift|valueOf))\b(?=[(\s])
 
     - name: support.function.console.coffee
       match: ((?<=console\.)(assert|clear|count|debug|dir|dirxml|error|group|groupCollapsed|groupEnd|info|log|profile|profileEnd|time|timeEnd|timeline|timelineEnd|timeStampt|trace|warn))\b
 
     - name: support.function.static.array.coffee
-      match: (?x)((?<=Array\.)(isArray))\b
+      match: (?x)((?<=Array\.)(isArray|from))\b
 
     - name: support.function.static.object.coffee
       match: (?x)((?<=Object\.)(create|definePropert(ies|y)|freeze|getOwnProperty(Descriptors?|Names)|getProperty(Descriptor|Names)|getPrototypeOf|is(Extensible|Frozen|Sealed)?|isnt|keys|preventExtensions|seal))\b

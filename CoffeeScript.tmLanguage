@@ -37,7 +37,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\w)an(\.\w+)+</string>
+					<string>(?&lt;![\w.])an(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.user.an.coffee</string>
 				</dict>
@@ -162,7 +162,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\w)builder(\.\w+)+</string>
+					<string>(?&lt;![\w.])builder(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.user.builder.coffee</string>
 				</dict>
@@ -174,7 +174,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)(?&lt;!\.)\b[A-Z]\w*(?=(\.\w+)+)</string>
+					<string>(?x)(?&lt;!\.)\b[A-Z]\w*</string>
 					<key>name</key>
 					<string>entity.name.type.class.usage.coffee</string>
 				</dict>
@@ -606,23 +606,6 @@
 					<string>#object_key</string>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>^\s*(describe|it|app\.(get|post|put|all|del|delete))[^\w]</string>
-					<key>comment</key>
-					<string>Show well-known functions from Express and Mocha in Go To Symbol view</string>
-					<key>end</key>
-					<string>$</string>
-					<key>name</key>
-					<string>meta.function.symbols.coffee</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>$self</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
 					<key>match</key>
 					<string>[=-]&gt;</string>
 					<key>name</key>
@@ -709,6 +692,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>(?x)((?&lt;=\.)(then|catch|thenCatch|thenFinally))\b(?=[( ])</string>
+					<key>name</key>
+					<string>support.function.method.promise.coffee</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>((?&lt;=console\.)(assert|clear|count|debug|dir|dirxml|error|group|groupCollapsed|groupEnd|info|log|profile|profileEnd|time|timeEnd|timeline|timelineEnd|timeStampt|trace|warn))\b</string>
 					<key>name</key>
 					<string>support.function.console.coffee</string>
@@ -742,6 +731,24 @@
 					<string>(?x)((?&lt;=JSON\.)(parse|stringify))\b</string>
 					<key>name</key>
 					<string>support.function.static.json.coffee</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?x)(?&lt;=^|\s)\b((suite|test|suiteSetup|setup|suiteTeardown|teardown)|(describe|it|before|beforeEach|after|afterEach))\b</string>
+					<key>name</key>
+					<string>support.function.thirdparty.mocha.coffee</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?x)\b(app\.(get|post|put|all|del|delete|use|listen))\b</string>
+					<key>name</key>
+					<string>support.function.thirdparty.express.coffee</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?x)\b(require)\b(?=[( ])</string>
+					<key>name</key>
+					<string>support.function.thirdparty.node.coffee</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -950,7 +957,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\w)este(\.\w+)+</string>
+					<string>(?&lt;![\w.])este(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.vendor.este.coffee</string>
 				</dict>
@@ -962,7 +969,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\w)goog(\.\w+)+</string>
+					<string>(?&lt;![\w.])goog(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.vendor.goog.coffee</string>
 				</dict>
@@ -974,7 +981,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\w)Highcharts(\.\w+)+</string>
+					<string>(?&lt;![\w.])Highcharts(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.vendor.highcharts.coffee</string>
 				</dict>
@@ -1074,7 +1081,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)\b(Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|JSON|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol)\b</string>
+					<string>(?x)\b(Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|JSON|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol|console)\b</string>
 					<key>name</key>
 					<string>support.class.native.coffee</string>
 				</dict>
@@ -1441,7 +1448,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;!\w)sbks(\.\w+)+</string>
+					<string>(?&lt;![\w.])sbks(\.\w+)+</string>
 					<key>name</key>
 					<string>support.other.variable.user.sbks.coffee</string>
 				</dict>

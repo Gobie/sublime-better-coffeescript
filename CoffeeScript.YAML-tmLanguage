@@ -144,13 +144,6 @@ repository:
 
     - include: '#object_key'
 
-    - comment: Show well-known functions from Express and Mocha in Go To Symbol view
-      name: meta.function.symbols.coffee
-      begin: ^\s*(describe|it|app\.(get|post|put|all|del|delete))[^\w]
-      end: $
-      patterns:
-      - include: $self
-
     - name: storage.type.function.coffee
       match: '[=-]>'
 
@@ -185,6 +178,9 @@ repository:
       match: (?x)((?<=\.)(apply|call|concat|every|filter|forEach|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce(
         Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|unshift|valueOf))\b(?=[(\s])
 
+    - name: support.function.method.promise.coffee
+      match: (?x)((?<=\.)(then|catch|thenCatch|thenFinally))\b(?=[( ])
+
     - name: support.function.console.coffee
       match: ((?<=console\.)(assert|clear|count|debug|dir|dirxml|error|group|groupCollapsed|groupEnd|info|log|profile|profileEnd|time|timeEnd|timeline|timelineEnd|timeStampt|trace|warn))\b
 
@@ -202,6 +198,15 @@ repository:
 
     - name: support.function.static.json.coffee
       match: (?x)((?<=JSON\.)(parse|stringify))\b
+
+    - name: support.function.thirdparty.mocha.coffee
+      match: (?x)(?<=^|\s)\b((suite|test|suiteSetup|setup|suiteTeardown|teardown)|(describe|it|before|beforeEach|after|afterEach))\b
+
+    - name: support.function.thirdparty.express.coffee
+      match: (?x)\b(app\.(get|post|put|all|del|delete|use|listen))\b
+
+    - name: support.function.thirdparty.node.coffee
+      match: (?x)\b(require)\b(?=[( ])
 
     - name: punctuation.terminator.statement.coffee
       match: \;
@@ -240,32 +245,32 @@ repository:
   an_library:
     patterns:
     - name: support.other.variable.user.an.coffee
-      match: (?<!\w)an(\.\w+)+
+      match: (?<![\w.])an(\.\w+)+
 
   builder_library:
     patterns:
     - name: support.other.variable.user.builder.coffee
-      match: (?<!\w)builder(\.\w+)+
+      match: (?<![\w.])builder(\.\w+)+
 
   sbks_library:
     patterns:
     - name: support.other.variable.user.sbks.coffee
-      match: (?<!\w)sbks(\.\w+)+
+      match: (?<![\w.])sbks(\.\w+)+
 
   este_library:
     patterns:
     - name: support.other.variable.vendor.este.coffee
-      match: (?<!\w)este(\.\w+)+
+      match: (?<![\w.])este(\.\w+)+
 
   google_closure_library:
     patterns:
     - name: support.other.variable.vendor.goog.coffee
-      match: (?<!\w)goog(\.\w+)+
+      match: (?<![\w.])goog(\.\w+)+
 
   highcharts_library:
     patterns:
     - name: support.other.variable.vendor.highcharts.coffee
-      match: (?<!\w)Highcharts(\.\w+)+
+      match: (?<![\w.])Highcharts(\.\w+)+
 
   numeric:
     patterns:
@@ -275,7 +280,7 @@ repository:
   class_usage:
     patterns:
     - name: entity.name.type.class.usage.coffee
-      match: (?x)(?<!\.)\b[A-Z]\w*(?=(\.\w+)+)
+      match: (?x)(?<!\.)\b[A-Z]\w*
 
   embedded_comment:
     patterns:
@@ -401,7 +406,7 @@ repository:
   native_class:
     patterns:
     - name: support.class.native.coffee
-      match: (?x)\b(Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|JSON|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol)\b
+      match: (?x)\b(Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|JSON|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol|console)\b
 
   keyword_operator:
     patterns:

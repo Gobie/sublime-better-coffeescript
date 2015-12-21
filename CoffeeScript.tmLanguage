@@ -734,7 +734,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?x)(?&lt;=^|\s)\b((suite|test|suiteSetup|setup|suiteTeardown|teardown)|(describe|it|before|beforeEach|after|afterEach))\b</string>
+					<string>(?x)(?&lt;=^|\s)\b((suite|test|suiteSetup|setup|suiteTeardown|teardown)|(describe|it|before|beforeEach|after|afterEach))\b(?=\s+[('"-])</string>
 					<key>name</key>
 					<string>support.function.thirdparty.mocha.coffee</string>
 				</dict>

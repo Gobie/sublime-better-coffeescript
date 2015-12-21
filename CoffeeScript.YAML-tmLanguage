@@ -200,7 +200,7 @@ repository:
       match: (?x)((?<=JSON\.)(parse|stringify))\b
 
     - name: support.function.thirdparty.mocha.coffee
-      match: (?x)(?<=^|\s)\b((suite|test|suiteSetup|setup|suiteTeardown|teardown)|(describe|it|before|beforeEach|after|afterEach))\b
+      match: (?x)(?<=^|\s)\b((suite|test|suiteSetup|setup|suiteTeardown|teardown)|(describe|it|before|beforeEach|after|afterEach))\b(?=\s+[('"-])
 
     - name: support.function.thirdparty.express.coffee
       match: (?x)\b(app\.(get|post|put|all|del|delete|use|listen))\b

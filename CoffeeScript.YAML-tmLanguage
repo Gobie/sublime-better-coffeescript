@@ -385,11 +385,10 @@ repository:
       - include: '#este_library'
       - include: '#google_closure_library'
       - include: '#highcharts_library'
+      - include: '#annotation_definition'
       - include: '#constant_true'
       - include: '#constant_false'
-      - include: '#constant_null'
       - include: '#constant_rest'
-      - include: '#annotation_definition'
       - include: '#keyword_operator'
       - include: '#whitespace'
       - name: storage.type.annotation.type.coffee
@@ -401,6 +400,8 @@ repository:
       match: (?x)\b(string|boolean|number|Element|Node)\b
     - name: storage.type.annotation.keywords.coffee
       match: (?x)\b(function|new|this)\b
+    - name: constant.language.null.coffee
+      match: \bnull\b
     - include: '#native_class'
 
   native_class:

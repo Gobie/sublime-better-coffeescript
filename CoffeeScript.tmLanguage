@@ -60,6 +60,12 @@
 					<string>storage.type.annotation.keywords.coffee</string>
 				</dict>
 				<dict>
+					<key>match</key>
+					<string>\bnull\b</string>
+					<key>name</key>
+					<string>constant.language.null.coffee</string>
+				</dict>
+				<dict>
 					<key>include</key>
 					<string>#native_class</string>
 				</dict>
@@ -120,6 +126,10 @@
 						</dict>
 						<dict>
 							<key>include</key>
+							<string>#annotation_definition</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#constant_true</string>
 						</dict>
 						<dict>
@@ -128,15 +138,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#constant_null</string>
-						</dict>
-						<dict>
-							<key>include</key>
 							<string>#constant_rest</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#annotation_definition</string>
 						</dict>
 						<dict>
 							<key>include</key>

@@ -1007,7 +1007,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|for|if|instanceof|in|is|isnt|not(?=\s+in\s)|or|then|unless|when)\b)|(\s+\?\s)|\s*(%|\?=|==|=(?!&gt;)|[+*/&lt;&gt;#,}]|-(?!&gt;))))</string>
+					<string>(?x)(@|this\.)([a-zA-Z_\$]\w*)?(?=\??([\]\[.)\n]|(\s+(and|else|for|if|instanceof|in|is|isnt|not(?=\s+in\s)|or|then|unless|when)\b)|(\s+\?\s)|\s*(%|\?=|==|=(?!&gt;)|[+*/&lt;&gt;#,}]|-(?![&gt;0-9]))))</string>
 					<key>name</key>
 					<string>variable.other.readwrite.instance.coffee</string>
 				</dict>
@@ -1129,7 +1129,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>((?&lt;=\.)[a-zA-Z\$_]\w*)(?=\s*=(?![=&gt;]))</string>
+					<string>((?&lt;=\.)[a-zA-Z\$_]\w*)(?=\s*(=|\*=|/=|%=|\+=|\-=|&amp;=|\^=)(?![=&gt;]))</string>
 					<key>name</key>
 					<string>meta.variable.assignment.object.coffee</string>
 				</dict>

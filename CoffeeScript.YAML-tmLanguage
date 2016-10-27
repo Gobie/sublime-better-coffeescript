@@ -279,7 +279,7 @@ repository:
 
   class_usage:
     patterns:
-    - name: entity.name.type.class.usage.coffee
+    - name: variable.other.name.class.coffee
       match: (?x)(?<!\.)\b[A-Z]\w*
 
   embedded_comment:

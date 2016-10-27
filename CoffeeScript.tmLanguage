@@ -178,7 +178,7 @@
 					<key>match</key>
 					<string>(?x)(?&lt;!\.)\b[A-Z]\w*</string>
 					<key>name</key>
-					<string>entity.name.type.class.usage.coffee</string>
+					<string>variable.other.name.class.coffee</string>
 				</dict>
 			</array>
 		</dict>
